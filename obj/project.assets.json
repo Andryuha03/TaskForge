@@ -15,6 +15,19 @@
           }
         }
       },
+      "Dapper/2.1.72": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
@@ -1191,6 +1204,27 @@
         "lib/netstandard2.1/Castle.Core.dll",
         "lib/netstandard2.1/Castle.Core.xml",
         "readme.txt"
+      ]
+    },
+    "Dapper/2.1.72": {
+      "sha512": "ns4mGqQd9a/MhP8m6w556vVlZIa0/MfUu03zrxjZC/jlr1uVCsUac8bkdB+Fs98Llbd56rRSo1eZH5VVmeGZyw==",
+      "type": "package",
+      "path": "dapper/2.1.72",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Dapper.png",
+        "dapper.2.1.72.nupkg.sha512",
+        "dapper.nuspec",
+        "lib/net10.0/Dapper.dll",
+        "lib/net10.0/Dapper.xml",
+        "lib/net461/Dapper.dll",
+        "lib/net461/Dapper.xml",
+        "lib/net8.0/Dapper.dll",
+        "lib/net8.0/Dapper.xml",
+        "lib/netstandard2.0/Dapper.dll",
+        "lib/netstandard2.0/Dapper.xml",
+        "readme.md"
       ]
     },
     "Humanizer.Core/2.14.1": {
@@ -3301,6 +3335,7 @@
   },
   "projectFileDependencyGroups": {
     "net10.0-windows7.0": [
+      "Dapper >= 2.1.72",
       "MaterialDesignColors >= 5.3.1",
       "MaterialDesignThemes >= 5.3.1",
       "Microsoft.EntityFrameworkCore >= 10.0.5",
@@ -3312,23 +3347,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\azver\\.nuget\\packages\\": {},
+    "C:\\Users\\Andy_Eves\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\azver\\source\\repos\\TaskForge\\TaskForge.csproj",
+      "projectUniqueName": "C:\\Users\\Andy_Eves\\source\\repos\\TaskForge\\TaskForge.csproj",
       "projectName": "TaskForge",
-      "projectPath": "C:\\Users\\azver\\source\\repos\\TaskForge\\TaskForge.csproj",
-      "packagesPath": "C:\\Users\\azver\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\azver\\source\\repos\\TaskForge\\obj\\",
+      "projectPath": "C:\\Users\\Andy_Eves\\source\\repos\\TaskForge\\TaskForge.csproj",
+      "packagesPath": "C:\\Users\\Andy_Eves\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Andy_Eves\\source\\repos\\TaskForge\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\azver\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Andy_Eves\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3361,6 +3396,10 @@
       "net10.0-windows7.0": {
         "targetAlias": "net10.0-windows",
         "dependencies": {
+          "Dapper": {
+            "target": "Package",
+            "version": "[2.1.72, )"
+          },
           "MaterialDesignColors": {
             "target": "Package",
             "version": "[5.3.1, )"
