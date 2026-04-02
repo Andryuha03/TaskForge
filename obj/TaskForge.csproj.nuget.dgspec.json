@@ -50,6 +50,10 @@
         "net10.0-windows7.0": {
           "targetAlias": "net10.0-windows",
           "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.72, )"
+            },
             "MaterialDesignColors": {
               "target": "Package",
               "version": "[5.3.1, )"

@@ -1,10 +1,31 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\azver\\source\\repos\\TaskForge\\",
+  "WorkspaceRootPath": "C:\\Users\\Andy_Eves\\source\\repos\\TaskForge\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0069E27B-ECE3-4ED4-BB95-107427E6BF7D}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{0069E27B-ECE3-4ED4-BB95-107427E6BF7D}|TaskForge.csproj|solutionrelative:views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+<<<<<<< HEAD
+      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+=======
+      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\andy_eves\\source\\repos\\taskforge\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\andy_eves\\source\\repos\\taskforge\\views\\pages\\projectpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:views\\pages\\projectpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\andy_eves\\source\\repos\\taskforge\\views\\pages\\achievementspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:views\\pages\\achievementspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\andy_eves\\source\\repos\\taskforge\\views\\pages\\userpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:views\\pages\\userpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\andy_eves\\source\\repos\\taskforge\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+>>>>>>> origin/master
     }
   ],
   "DocumentGroupContainers": [
@@ -14,18 +35,70 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{c6f34f0d-7ae5-4f3a-be61-fe0c21ae9eb8}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProjectPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Andy_Eves\\source\\repos\\TaskForge\\Views\\Pages\\ProjectPage.xaml",
+              "RelativeDocumentMoniker": "Views\\Pages\\ProjectPage.xaml",
+              "ToolTip": "C:\\Users\\Andy_Eves\\source\\repos\\TaskForge\\Views\\Pages\\ProjectPage.xaml",
+              "RelativeToolTip": "Views\\Pages\\ProjectPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-02T12:35:17.335Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Andy_Eves\\source\\repos\\TaskForge\\Views\\MainWindow.xaml",
               "RelativeDocumentMoniker": "Views\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\Andy_Eves\\source\\repos\\TaskForge\\Views\\MainWindow.xaml",
               "RelativeToolTip": "Views\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-04-01T14:54:43.641Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Andy_Eves\\source\\repos\\TaskForge\\Views\\Pages\\UserPage.xaml",
+              "RelativeDocumentMoniker": "Views\\Pages\\UserPage.xaml",
+              "ToolTip": "C:\\Users\\Andy_Eves\\source\\repos\\TaskForge\\Views\\Pages\\UserPage.xaml",
+              "RelativeToolTip": "Views\\Pages\\UserPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-02T12:36:47.208Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\Andy_Eves\\source\\repos\\TaskForge\\App.xaml",
+              "RelativeDocumentMoniker": "App.xaml",
+              "ToolTip": "C:\\Users\\Andy_Eves\\source\\repos\\TaskForge\\App.xaml",
+              "RelativeToolTip": "App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-02T12:23:30.266Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AchievementsPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Andy_Eves\\source\\repos\\TaskForge\\Views\\Pages\\AchievementsPage.xaml",
+              "RelativeDocumentMoniker": "Views\\Pages\\AchievementsPage.xaml",
+              "ToolTip": "C:\\Users\\Andy_Eves\\source\\repos\\TaskForge\\Views\\Pages\\AchievementsPage.xaml",
+              "RelativeToolTip": "Views\\Pages\\AchievementsPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-02T12:37:28.455Z",
               "EditorCaption": ""
             }
           ]
