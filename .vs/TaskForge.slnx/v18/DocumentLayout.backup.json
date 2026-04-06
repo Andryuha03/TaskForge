@@ -1,14 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Andy_Eves\\source\\repos\\TaskForge\\",
+  "WorkspaceRootPath": "C:\\Users\\azver\\source\\repos\\TaskForge\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\andy_eves\\source\\repos\\taskforge\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\views\\authwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:views\\authwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\andy_eves\\source\\repos\\taskforge\\models\\user_achievement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:models\\user_achievement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\views\\authwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:views\\authwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\views\\authpages\\signuppage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:views\\authpages\\signuppage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\views\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:views\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\models\\repositories\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:models\\repositories\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\views\\pages\\achievementspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:views\\pages\\achievementspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +42,106 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ApplicationDBContext.cs",
-              "DocumentMoniker": "C:\\Users\\Andy_Eves\\source\\repos\\TaskForge\\Models\\ApplicationDBContext.cs",
-              "RelativeDocumentMoniker": "Models\\ApplicationDBContext.cs",
-              "ToolTip": "C:\\Users\\Andy_Eves\\source\\repos\\TaskForge\\Models\\ApplicationDBContext.cs*",
-              "RelativeToolTip": "Models\\ApplicationDBContext.cs*",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAzwBIAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-03T01:40:46.665Z",
+              "DocumentIndex": 1,
+              "Title": "AuthWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\AuthWindow.xaml",
+              "RelativeDocumentMoniker": "Views\\AuthWindow.xaml",
+              "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\AuthWindow.xaml",
+              "RelativeToolTip": "Views\\AuthWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-06T13:38:29.629Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "User_Achievement.cs",
-              "DocumentMoniker": "C:\\Users\\Andy_Eves\\source\\repos\\TaskForge\\Models\\User_Achievement.cs",
-              "RelativeDocumentMoniker": "Models\\User_Achievement.cs",
-              "ToolTip": "C:\\Users\\Andy_Eves\\source\\repos\\TaskForge\\Models\\User_Achievement.cs",
-              "RelativeToolTip": "Models\\User_Achievement.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAQAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Views\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\MainWindow.xaml",
+              "RelativeToolTip": "Views\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-06T13:40:44.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\AuthWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\AuthWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\AuthWindow.xaml.cs",
+              "RelativeToolTip": "Views\\AuthWindow.xaml.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAuwCkAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-03T01:40:34.964Z",
+              "WhenOpened": "2026-04-06T13:58:00.928Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SignUpPage.xaml",
+              "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\AuthPages\\SignUpPage.xaml",
+              "RelativeDocumentMoniker": "Views\\AuthPages\\SignUpPage.xaml",
+              "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\AuthPages\\SignUpPage.xaml",
+              "RelativeToolTip": "Views\\AuthPages\\SignUpPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-06T14:29:48.177Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "Views\\MainViewModel.cs",
+              "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\MainViewModel.cs",
+              "RelativeToolTip": "Views\\MainViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T12:55:51.085Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ApplicationDBContext.cs",
+              "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\Models\\Repositories\\ApplicationDBContext.cs",
+              "RelativeDocumentMoniker": "Models\\Repositories\\ApplicationDBContext.cs",
+              "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\Models\\Repositories\\ApplicationDBContext.cs",
+              "RelativeToolTip": "Models\\Repositories\\ApplicationDBContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T12:56:24.975Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AchievementsPage.xaml",
+              "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\Pages\\AchievementsPage.xaml",
+              "RelativeDocumentMoniker": "Views\\Pages\\AchievementsPage.xaml",
+              "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\Pages\\AchievementsPage.xaml",
+              "RelativeToolTip": "Views\\Pages\\AchievementsPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-06T12:55:05.706Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Views\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T12:54:51.819Z",
               "EditorCaption": ""
             }
           ]

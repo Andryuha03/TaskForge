@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TaskForge.Views.Pages;
 
 namespace TaskForge
 {
@@ -19,6 +20,23 @@ namespace TaskForge
         public MainWindow()
         {
             InitializeComponent();
+
+            MainFrame.Navigate(new UserPage());
+        }
+
+        private void ProfileBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new UserPage());
+        }
+
+        private void TaskBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new TaskPage());
+        }
+
+        private void ProjectBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new ProjectPage());
         }
     }
 }

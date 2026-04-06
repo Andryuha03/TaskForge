@@ -3347,23 +3347,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Andy_Eves\\.nuget\\packages\\": {},
+    "C:\\Users\\azver\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Andy_Eves\\source\\repos\\TaskForge\\TaskForge.csproj",
+      "projectUniqueName": "C:\\Users\\azver\\source\\repos\\TaskForge\\TaskForge.csproj",
       "projectName": "TaskForge",
-      "projectPath": "C:\\Users\\Andy_Eves\\source\\repos\\TaskForge\\TaskForge.csproj",
-      "packagesPath": "C:\\Users\\Andy_Eves\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Andy_Eves\\source\\repos\\TaskForge\\obj\\",
+      "projectPath": "C:\\Users\\azver\\source\\repos\\TaskForge\\TaskForge.csproj",
+      "packagesPath": "C:\\Users\\azver\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\azver\\source\\repos\\TaskForge\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Andy_Eves\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\azver\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
