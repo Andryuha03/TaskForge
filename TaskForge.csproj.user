@@ -24,4 +24,9 @@
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <SubType>Code</SubType>
+    </None>
+  </ItemGroup>
 </Project>

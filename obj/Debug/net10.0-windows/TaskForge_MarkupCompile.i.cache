@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\azver\source\repos\TaskForge\obj\Debug\net10.0-windows\
+C:\Users\Andy_Eves\source\repos\TaskForge\obj\Debug\net10.0-windows\
 TaskForge
 none
 false
 TRACE;DEBUG;NET;NET10_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NET9_0_OR_GREATER;NET10_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-C:\Users\azver\source\repos\TaskForge\App.xaml
+C:\Users\Andy_Eves\source\repos\TaskForge\App.xaml
 8-1873921821
-221941378817
-23-248865574
-230282479861
+221764093082
+24290429535
+237-2009113440
 Views\AuthPages\LogInPage.xaml;Views\AuthPages\SignUpPage.xaml;Views\AuthWindow.xaml;Views\MainWindow.xaml;Views\Pages\AchievementsPage.xaml;Views\Pages\ProjectPage.xaml;Views\Pages\TaskPage.xaml;Views\Pages\UserPage.xaml;
 
-True
+False
 

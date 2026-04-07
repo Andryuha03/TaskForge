@@ -328,3 +328,17 @@ C:\Users\azver\source\repos\TaskForge\obj\Debug\net10.0-windows\Views\AuthPages\
 C:\Users\azver\source\repos\TaskForge\obj\Debug\net10.0-windows\Views\AuthPages\SignUpPage.g.cs
 C:\Users\azver\source\repos\TaskForge\obj\Debug\net10.0-windows\Views\AuthPages\LogInPage.baml
 C:\Users\azver\source\repos\TaskForge\obj\Debug\net10.0-windows\Views\AuthPages\SignUpPage.baml
+C:\Users\Andy_Eves\source\repos\TaskForge\obj\Debug\net10.0-windows\Views\AuthPages\LogInPage.g.cs
+C:\Users\Andy_Eves\source\repos\TaskForge\obj\Debug\net10.0-windows\Views\AuthPages\SignUpPage.g.cs
+C:\Users\Andy_Eves\source\repos\TaskForge\obj\Debug\net10.0-windows\Views\AuthWindow.g.cs
+C:\Users\Andy_Eves\source\repos\TaskForge\obj\Debug\net10.0-windows\Views\AuthPages\LogInPage.baml
+C:\Users\Andy_Eves\source\repos\TaskForge\obj\Debug\net10.0-windows\Views\AuthPages\SignUpPage.baml
+C:\Users\Andy_Eves\source\repos\TaskForge\obj\Debug\net10.0-windows\Views\AuthWindow.baml
+C:\Users\Andy_Eves\source\repos\TaskForge\bin\Debug\net10.0-windows\BCrypt.Net-Next.dll
+C:\Users\Andy_Eves\source\repos\TaskForge\bin\Debug\net10.0-windows\TaskForge.dll.config
+C:\Users\Andy_Eves\source\repos\TaskForge\bin\Debug\net10.0-windows\Microsoft.Extensions.Configuration.dll
+C:\Users\Andy_Eves\source\repos\TaskForge\bin\Debug\net10.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\Andy_Eves\source\repos\TaskForge\bin\Debug\net10.0-windows\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\Andy_Eves\source\repos\TaskForge\bin\Debug\net10.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Andy_Eves\source\repos\TaskForge\bin\Debug\net10.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\Andy_Eves\source\repos\TaskForge\bin\Debug\net10.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll

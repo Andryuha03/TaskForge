@@ -15,11 +15,13 @@
                 <DropShadowEffect BlurRadius="30" Color="Black" ShadowDepth="0"/>
             </Border.Effect>
             <StackPanel>
-                <TextBox x:Name="textBoxLogIn" materialDesign:HintAssist.Hint="Имя" Margin="5" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-                <PasswordBox x:Name="passBox" materialDesign:HintAssist.Hint="Пароль" Margin="5" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
-                <TextBox x:Name="textBoxEmail" materialDesign:HintAssist.Hint="Почта" Margin="5" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-                <Button x:Name="LoginBtn" Content="Создать новый аккаунт" Margin="0 10 0 10"/>
+                <TextBox x:Name="textBoxLogIn" TextChanged="TextBoxLogIn_TextChanged" materialDesign:HintAssist.Hint="Имя" Margin="5" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+                </TextBox>
+                <PasswordBox x:Name="passBox" PasswordChanged="PassBox_PasswordChanged" materialDesign:HintAssist.Hint="Пароль" Margin="5" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
+                <TextBox x:Name="textBoxEmail" TextChanged="TextBoxEmail_TextChanged" materialDesign:HintAssist.Hint="Почта" Margin="5" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <Button x:Name="SignUpBtn" Content="Создать новый аккаунт" Margin="0 10 0 10" Click="SignUpBtn_Click"/>
             </StackPanel>
         </Border>
+        <materialDesign:Snackbar  x:Name="ValidationSnackbar" MessageQueue="{materialDesign:MessageQueue}"/>
     </Grid>
 </Page>
