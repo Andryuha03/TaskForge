@@ -85,7 +85,7 @@ namespace TaskForge {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TaskForge;V1.0.0.0;component/views/mainwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TaskForge;component/views/mainwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\MainWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

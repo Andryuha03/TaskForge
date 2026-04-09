@@ -1,67 +1,66 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using TaskForge.Models.Entities;
 using TaskForge.Models.Repositories;
 using BC = BCrypt.Net.BCrypt;
 
 namespace TaskForge.Views.AuthPages
 {
-    /// <summary>
-    /// Логика взаимодействия для LogInPage.xaml
-    /// </summary>
     public partial class LogInPage : Page
     {
-        private readonly ApplicationDBContext _dbContext;
-        public LogInPage(ApplicationDBContext dbContext)
+        private readonly MainWindow _mainWindow;
+        private readonly IUserSession _userSession;
+        private readonly IUserRepository _userRepository;
+        public LogInPage(IUserRepository userRepository,
+            IUserSession userSession,
+            MainWindow mainWindow)
         {
             InitializeComponent();
-            _dbContext = dbContext;
+            _userRepository = userRepository;
+            _mainWindow = mainWindow;
+            _userSession = userSession;
         }
 
         private async void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
             string name = textBoxLogIn.Text.Trim();
-            string passwordHash = BC.HashPassword(passBox.Password);
-
+            string password = passBox.Password;
 
             try
             {
 
                 {
-                    bool userExists = await _dbContext.Users
-                        .AnyAsync(u => u.Name == name && u.Password == passwordHash);
+                    User? user = await _userRepository.GetUserAsync(name);
 
-
-                    if (!userExists)
+                    if (user == null || !BC.Verify(password, user.Password))
                     {
-                        MessageBox.Show($"Добро пожаловать, {name}",
-                            "Успешный вход",
-                            MessageBoxButton.OK,
-                            MessageBoxImage.Information);
-
-                        MainWindow mainWindow = new();
-                        mainWindow.Show();
-                        Window.GetWindow(this)?.Close();
+                        MessageBox.Show($"Неверное имя или пароль",
+                        "Ошибка входа",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
+                        return;
                     }
+
+                    _userSession.SetCurrentUser(user);
+
+                    MessageBox.Show($"Добро пожаловать, {name}",
+                    "Успешный вход",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information);
+
+                    
+                    _mainWindow.Show();
+                    Window.GetWindow(this).Close();
                 }
             }
             catch (Exception ex)
             {
                 {
                     MessageBox.Show("Что-то пошло не так... \n" + ex.Message,
-        "Ошибка",
-        MessageBoxButton.OK,
-        MessageBoxImage.Error);
+                    "Ошибка",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
                 }
             }
         }

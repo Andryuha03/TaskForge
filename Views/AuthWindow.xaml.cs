@@ -1,4 +1,5 @@
-﻿using Microsoft.Windows.Themes;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Windows.Themes;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -20,38 +21,31 @@ namespace TaskForge.Views
     /// </summary>
     public partial class AuthWindow : Window
     {
-        private readonly ApplicationDBContext _dbContext;
+        private readonly IServiceProvider _serviceProvider;
 
-        public AuthWindow()
+        public AuthWindow(IServiceProvider serviceProvider)
         {
             InitializeComponent();
-            _dbContext = new ApplicationDBContext();
+            _serviceProvider = serviceProvider;
 
-            AuthFrame.Navigate(new LogInPage(_dbContext));
-            LogInBtn.Visibility = Visibility.Collapsed;
-
+            NavigateToLogin();
         }
 
-        private void LogInBtn_Click(object sender, RoutedEventArgs e)
+        private void LogInBtn_Click(object sender, RoutedEventArgs e) => NavigateToLogin();
+        private void SignUpBtn_Click(object sender, RoutedEventArgs e) => NavigateToSignUp();
+
+        private void NavigateToLogin()
         {
-            AuthFrame.Navigate(new LogInPage(_dbContext));
-
-            LogInBtn.Visibility = Visibility.Collapsed;
-            SignUpBtn.Visibility = Visibility.Visible;
-        }
-
-        private void SignUpBtn_Click(object sender, RoutedEventArgs e)
-        {
-            AuthFrame.Navigate(new SignUpPage(_dbContext));
-
+            AuthFrame.Navigate(_serviceProvider.GetRequiredService<LogInPage>());
             SignUpBtn.Visibility = Visibility.Collapsed;
             LogInBtn.Visibility = Visibility.Visible;
-
         }
-        protected override void OnClosed(EventArgs e)
+
+        private void NavigateToSignUp()
         {
-            _dbContext?.Dispose();
-            base.OnClosed(e);
+            AuthFrame.Navigate(_serviceProvider.GetRequiredService<SignUpPage>());
+            SignUpBtn.Visibility = Visibility.Visible;
+            LogInBtn.Visibility = Visibility.Collapsed;
         }
     }
 }

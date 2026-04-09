@@ -1,13 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
-using System.Configuration;
-using System.Data;
 using System.IO;
-using System.Runtime.InteropServices;
 using System.Windows;
+using TaskForge.Models.Entities;
 using TaskForge.Models.Repositories;
+using TaskForge.Views;
 using TaskForge.Views.AuthPages;
 
 namespace TaskForge
@@ -31,16 +29,21 @@ namespace TaskForge
             var services = new ServiceCollection();
 
             services.AddDbContext<ApplicationDBContext>(options =>
-            options.UseSqlite(configuration.GetConnectionString("DefaultConnection")));
+            options.UseSqlite(configuration.GetConnectionString("DefaultConnection")),
+        contextLifetime: ServiceLifetime.Scoped);
 
+            services.AddSingleton<IUserSession, UserSession>();
+            services.AddScoped<IUserRepository, UserRepository>();
             services.AddTransient<SignUpPage>();
             services.AddTransient<LogInPage>();
-            services.AddTransient<MainWindow>();
+            services.AddSingleton<MainWindow>();
+            services.AddSingleton<AuthWindow>();
+
 
             serviceProvider = services.BuildServiceProvider();
 
-            var mainWindow = serviceProvider.GetRequiredService<MainWindow>();
-            mainWindow.Show();
+            var authWindow = serviceProvider.GetRequiredService<AuthWindow>();
+            authWindow.Show();
 
 
        }

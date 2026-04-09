@@ -77,7 +77,7 @@ namespace TaskForge.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TaskForge;V1.0.0.0;component/views/authwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TaskForge;component/views/authwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\AuthWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
