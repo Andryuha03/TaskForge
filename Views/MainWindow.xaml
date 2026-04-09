@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TaskForge"
         mc:Ignorable="d"
         Style="{StaticResource MaterialDesignWindow}"
-        Title="MainWindow" Height="450" Width="800"
+        Title="Task Forge" Height="450" Width="800"
         WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -14,10 +14,10 @@
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0" Background="Black">
-            <Button x:Name="ProfileBtn" Content="Пользователь" Margin="5 5 5 5"/>
-            <Button x:Name="TaskBtn" Content="Задачи" Margin="5 5 5 5"/>
-            <Button x:Name="ProjectBtn" Content="Проекты" Margin="5 5 5 5"/>
+            <Button x:Name="ProfileBtn" Content="Пользователь" Margin="5 5 5 5" Click="ProfileBtn_Click"/>
+            <Button x:Name="TaskBtn" Content="Задачи" Margin="5 5 5 5" Click="TaskBtn_Click"/>
+            <Button x:Name="ProjectBtn" Content="Проекты" Margin="5 5 5 5" Click="ProjectBtn_Click"/>
         </StackPanel>
-        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" />
+        <Frame Grid.Column="1" x:Name="MainFrame" NavigationUIVisibility="Hidden" />
     </Grid>
 </Window>

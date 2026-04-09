@@ -1,0 +1,23 @@
+﻿<Window x:Class="TaskForge.Views.AuthWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaskForge.Views"
+        mc:Ignorable="d"
+        Title="Task Forge" MinHeight="500" Height="500" MinWidth="450" Width="450"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Task Forge" HorizontalAlignment="Center" FontSize="32" Style="{StaticResource MaterialDesignBody2TextBlock}"/>
+        <Frame x:Name="AuthFrame" Grid.Row="1"  NavigationUIVisibility="Hidden" />
+        <DockPanel Grid.Row="2" >
+            <Button x:Name="LogInBtn" Content="Войти" Width="90" HorizontalAlignment="Left" Margin="10" Click="LogInBtn_Click"/>
+            <Button x:Name="SignUpBtn" Content="Создать" Width="90" HorizontalAlignment="Right"  Margin="10" Click="SignUpBtn_Click"/>
+        </DockPanel>
+    </Grid>
+</Window>
