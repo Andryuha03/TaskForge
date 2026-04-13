@@ -8,19 +8,34 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="UserPage">
 
-    <Grid Margin="10 10 10 10">
+    <Grid Margin="10 10 10 10" Background="LightSlateGray">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <Label Content="{Binding id}" Grid.Row="0"/>
-        <Label Content="{Binding name}" Grid.Row="1"/>
-        <Label Content="{Binding email}" Grid.Row="2"/>
-        <Label Content="{Binding level}" Grid.Row="3"/>
-        <Label Content="{Binding Created_at}" Grid.Row="4"/>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+        </Grid.ColumnDefinitions>
+        <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+            <StackPanel>
+                <TextBlock Text="{Binding CurrentUserName}"/>
+                <TextBlock Text="{Binding CurrentUserEmail}"/>
+            </StackPanel>
+        </Border>
+        <Button x:Name="EditBtn" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" Style="{StaticResource MaterialDesignFlatDarkBgButton}" HorizontalAlignment="Right" Margin="5" Content="Изменить"/>
+        <Border BorderBrush="White" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2" Padding="30">
+            
+        </Border>
     </Grid>
 </Page>

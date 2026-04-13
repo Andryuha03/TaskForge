@@ -7,6 +7,7 @@ using TaskForge.Models.Entities;
 using TaskForge.Models.Repositories;
 using TaskForge.Views;
 using TaskForge.Views.AuthPages;
+using TaskForge.Views.Pages;
 
 namespace TaskForge
 {
@@ -36,6 +37,9 @@ namespace TaskForge
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddTransient<SignUpPage>();
             services.AddTransient<LogInPage>();
+            services.AddTransient<TaskPage>();
+            services.AddTransient<ProjectPage>();
+            services.AddTransient<AchievementsPage>();
             services.AddSingleton<MainWindow>();
             services.AddSingleton<AuthWindow>();
 
@@ -44,6 +48,9 @@ namespace TaskForge
 
             var authWindow = serviceProvider.GetRequiredService<AuthWindow>();
             authWindow.Show();
+
+            var mainWindow = serviceProvider.GetRequiredService<MainWindow>();
+            mainWindow.Show();
 
 
        }

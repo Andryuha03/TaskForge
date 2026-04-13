@@ -10,15 +10,20 @@ namespace TaskForge.Views.AuthPages
 {
     public partial class SignUpPage : Page
     {
+        private readonly IUserSession _userSession;
+        private readonly MainWindow _mainWindow;
         private readonly ApplicationDBContext _dbContext;
+
         private bool isNameValid = false;
         private bool isPasswordValid = false;
         private bool isEmailValid = false;
 
-        public SignUpPage(ApplicationDBContext dbContext)
+        public SignUpPage(ApplicationDBContext dbContext, IUserSession userSession, MainWindow mainWindow)
         {
             InitializeComponent();
             _dbContext = dbContext;
+            _userSession = userSession;
+            _mainWindow = mainWindow;
         }
 
         private async void SignUpBtn_Click(object sender, RoutedEventArgs e)
@@ -60,8 +65,8 @@ namespace TaskForge.Views.AuthPages
                     MessageBoxButton.OK,
                     MessageBoxImage.Information);
 
-                MainWindow mainWindow = new();
-                mainWindow.Show();
+                _mainWindow.ShowMainContent();
+                _mainWindow.Show();
                 Window.GetWindow(this).Close();
 
             }

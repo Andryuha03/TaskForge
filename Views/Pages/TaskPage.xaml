@@ -9,6 +9,6 @@
       Title="TaskPage">
 
     <Grid>
-        
+        <DataGrid x:Name="TaskDataGrid" ItemsSource="{Binding TasksItem}" AutoGenerateColumns="True" CanUserAddRows="False" />
     </Grid>
 </Page>

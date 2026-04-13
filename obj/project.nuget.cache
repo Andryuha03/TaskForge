@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "XkoT22PmFm8=",
+  "dgSpecHash": "HcCEeZeaLsE=",
   "success": true,
   "projectFilePath": "C:\\Users\\azver\\source\\repos\\TaskForge\\TaskForge.csproj",
   "expectedPackageFiles": [
@@ -56,30 +56,7 @@
     "C:\\Users\\azver\\.nuget\\packages\\system.composition.convention\\9.0.0\\system.composition.convention.9.0.0.nupkg.sha512",
     "C:\\Users\\azver\\.nuget\\packages\\system.composition.hosting\\9.0.0\\system.composition.hosting.9.0.0.nupkg.sha512",
     "C:\\Users\\azver\\.nuget\\packages\\system.composition.runtime\\9.0.0\\system.composition.runtime.9.0.0.nupkg.sha512",
-    "C:\\Users\\azver\\.nuget\\packages\\system.composition.typedparts\\9.0.0\\system.composition.typedparts.9.0.0.nupkg.sha512",
-    "C:\\Users\\azver\\.nuget\\packages\\system.configuration.configurationmanager\\10.0.5\\system.configuration.configurationmanager.10.0.5.nupkg.sha512"
+    "C:\\Users\\azver\\.nuget\\packages\\system.composition.typedparts\\9.0.0\\system.composition.typedparts.9.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "message": "Ошибка чтения файла кэша C:\\Users\\azver\\source\\repos\\TaskForge\\obj\\project.nuget.cache: '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0.",
-      "projectPath": "C:\\Users\\azver\\source\\repos\\TaskForge\\TaskForge.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\azver\\source\\repos\\TaskForge\\TaskForge.csproj",
-      "targetGraphs": []
-    },
-    {
-      "code": "NU1510",
-      "level": "Warning",
-      "message": "PackageReference System.Configuration.ConfigurationManager не будет урезано. Рассмотрите возможность удаления этого пакета из зависимостей, так как он, вероятно, не требуется.",
-      "projectPath": "C:\\Users\\azver\\source\\repos\\TaskForge\\TaskForge.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\azver\\source\\repos\\TaskForge\\TaskForge.csproj",
-      "libraryId": "System.Configuration.ConfigurationManager",
-      "targetGraphs": [
-        "net10.0-windows7.0"
-      ]
-    }
-  ]
+  "logs": []
 }

@@ -1312,22 +1312,6 @@
         "build": {
           "buildTransitive/net8.0/_._": {}
         }
-      },
-      "System.Configuration.ConfigurationManager/10.0.5": {
-        "type": "package",
-        "compile": {
-          "lib/net10.0/_._": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net10.0/_._": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
       }
     }
   },
@@ -3686,35 +3670,6 @@
         "system.composition.typedparts.nuspec",
         "useSharedDesignerContext.txt"
       ]
-    },
-    "System.Configuration.ConfigurationManager/10.0.5": {
-      "sha512": "9UHU7hldEOVgcOHUX7Pa+owDfpzhW+a1gshEvyknAoDA++G6FV+N1cPoUbtsXEO7GgPErGSg8MHrI/YqrLoiGA==",
-      "type": "package",
-      "path": "system.configuration.configurationmanager/10.0.5",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "PACKAGE.md",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/System.Configuration.ConfigurationManager.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net8.0/_._",
-        "buildTransitive/netcoreapp2.0/System.Configuration.ConfigurationManager.targets",
-        "lib/net10.0/System.Configuration.ConfigurationManager.dll",
-        "lib/net10.0/System.Configuration.ConfigurationManager.xml",
-        "lib/net462/System.Configuration.ConfigurationManager.dll",
-        "lib/net462/System.Configuration.ConfigurationManager.xml",
-        "lib/net8.0/System.Configuration.ConfigurationManager.dll",
-        "lib/net8.0/System.Configuration.ConfigurationManager.xml",
-        "lib/net9.0/System.Configuration.ConfigurationManager.dll",
-        "lib/net9.0/System.Configuration.ConfigurationManager.xml",
-        "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll",
-        "lib/netstandard2.0/System.Configuration.ConfigurationManager.xml",
-        "system.configuration.configurationmanager.10.0.5.nupkg.sha512",
-        "system.configuration.configurationmanager.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -3732,8 +3687,7 @@
       "Microsoft.Extensions.Configuration >= 10.0.5",
       "Microsoft.Extensions.Configuration.FileExtensions >= 10.0.5",
       "Microsoft.Extensions.Configuration.Json >= 10.0.5",
-      "Microsoft.Extensions.DependencyInjection >= 10.0.5",
-      "System.Configuration.ConfigurationManager >= 10.0.5"
+      "Microsoft.Extensions.DependencyInjection >= 10.0.5"
     ]
   },
   "packageFolders": {
@@ -3843,10 +3797,6 @@
             "version": "[10.0.5, )"
           },
           "Microsoft.Extensions.DependencyInjection": {
-            "target": "Package",
-            "version": "[10.0.5, )"
-          },
-          "System.Configuration.ConfigurationManager": {
             "target": "Package",
             "version": "[10.0.5, )"
           }
@@ -4163,23 +4113,5 @@
         }
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Ошибка чтения файла кэша C:\\Users\\azver\\source\\repos\\TaskForge\\obj\\project.nuget.cache: '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0."
-    },
-    {
-      "code": "NU1510",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "PackageReference System.Configuration.ConfigurationManager не будет урезано. Рассмотрите возможность удаления этого пакета из зависимостей, так как он, вероятно, не требуется.",
-      "libraryId": "System.Configuration.ConfigurationManager",
-      "targetGraphs": [
-        "net10.0-windows7.0"
-      ]
-    }
-  ]
+  }
 }

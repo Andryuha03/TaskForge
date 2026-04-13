@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TaskForge.Models.Repositories;
 
 namespace TaskForge.Views.Pages
 {
@@ -18,9 +19,14 @@ namespace TaskForge.Views.Pages
     /// </summary>
     public partial class UserPage : Page
     {
-        public UserPage()
+        private readonly IUserSession _userSession;
+        public UserPage(IUserSession userSession)
         {
             InitializeComponent();
+            _userSession = userSession;
+
+            this.DataContext = _userSession;
         }
+
     }
 }
