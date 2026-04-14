@@ -7,6 +7,7 @@ using TaskForge.Models.Entities;
 using TaskForge.Models.Repositories;
 using TaskForge.Views;
 using TaskForge.Views.AuthPages;
+using TaskForge.Views.Dialogs;
 using TaskForge.Views.Pages;
 
 namespace TaskForge
@@ -16,7 +17,7 @@ namespace TaskForge
     /// </summary>
     public partial class App : Application
     {
-        public IServiceProvider serviceProvider { get; private set;  }
+        public static IServiceProvider serviceProvider { get; private set;  }
 
         protected override void OnStartup(StartupEventArgs e)
         {
@@ -35,11 +36,14 @@ namespace TaskForge
 
             services.AddSingleton<IUserSession, UserSession>();
             services.AddScoped<IUserRepository, UserRepository>();
+
             services.AddTransient<SignUpPage>();
             services.AddTransient<LogInPage>();
             services.AddTransient<TaskPage>();
             services.AddTransient<ProjectPage>();
             services.AddTransient<AchievementsPage>();
+            services.AddTransient<TaskEditWindow>();
+
             services.AddSingleton<MainWindow>();
             services.AddSingleton<AuthWindow>();
 
@@ -48,9 +52,6 @@ namespace TaskForge
 
             var authWindow = serviceProvider.GetRequiredService<AuthWindow>();
             authWindow.Show();
-
-            var mainWindow = serviceProvider.GetRequiredService<MainWindow>();
-            mainWindow.Show();
 
 
        }

@@ -1,20 +1,14 @@
-﻿using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 using TaskForge.Models.Repositories;
 using TaskForge.Views.Pages;
+using Microsoft.Extensions.DependencyInjection;
+using MaterialDesignThemes.Wpf;
 
 namespace TaskForge
 {
     public partial class MainWindow : Window
     {
+        private readonly IServiceProvider _serviceProvider;
         private readonly IUserSession _userSession;
         private readonly ApplicationDBContext _dbContext;
         public MainWindow(IUserSession userSession, ApplicationDBContext dbContext)
@@ -32,13 +26,16 @@ namespace TaskForge
 
         private void TaskBtn_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new TaskPage(_dbContext));
+            var taskPage = App.serviceProvider.GetRequiredService<TaskPage>();
+            MainFrame.Navigate(taskPage);
         }
 
         private void ProjectBtn_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Navigate(new ProjectPage());
         }
+
+        public DialogHost MainDialogHost => RootDialogHost;
 
         public void ShowMainContent()
         {

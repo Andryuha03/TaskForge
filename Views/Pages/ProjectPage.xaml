@@ -1,14 +1,64 @@
 ﻿<Page x:Class="TaskForge.Views.Pages.ProjectPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:TaskForge.Views.Pages"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="ProjectPage">
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      Title="Проекты">
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-    <Grid>
-        
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,16">
+            <TextBlock Text="Проекты" 
+                       Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                       VerticalAlignment="Center"/>
+            <Button Content="+ Новый проект"
+                    Style="{StaticResource MaterialDesignFlatButton}"
+                    Command="{Binding AddProjectCommand}"
+                    Margin="16,0,0,0"/>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1">
+            <ItemsControl ItemsSource="{Binding Projects}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <materialDesign:Card Margin="0,0,0,12" Padding="12" UniformCornerRadius="8">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0">
+                                    <TextBlock Text="{Binding Name}" 
+                                               Style="{StaticResource MaterialDesignSubtitle1TextBlock}"/>
+                                    <TextBlock Text="{Binding Info}" 
+                                               Style="{StaticResource MaterialDesignBody2TextBlock}"
+                                               Foreground="{DynamicResource MaterialDesignBodyLight}"/>
+                                    <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                                        <materialDesign:Chip Content="Дедлайн: {Binding Deadline, StringFormat='dd.MM.yyyy'}" />
+                                        <materialDesign:Chip Content="{Binding Status}" Margin="8,0,0,0"/>
+                                    </StackPanel>
+                                </StackPanel>
+                                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Button Style="{StaticResource MaterialDesignIconButton}"
+                                            ToolTip="Редактировать"
+                                            Command="{Binding DataContext.EditProjectCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                                            CommandParameter="{Binding}">
+                                        <materialDesign:PackIcon Kind="Edit" />
+                                    </Button>
+                                    <Button Style="{StaticResource MaterialDesignIconButton}"
+                                            ToolTip="Удалить"
+                                            Command="{Binding DataContext.DeleteProjectCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                                            CommandParameter="{Binding}">
+                                        <materialDesign:PackIcon Kind="Delete" />
+                                    </Button>
+                                </StackPanel>
+                            </Grid>
+                        </materialDesign:Card>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
     </Grid>
 </Page>

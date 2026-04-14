@@ -28,5 +28,10 @@ namespace TaskForge.Views.Pages
             this.DataContext = _userSession;
         }
 
+        private void OpenAllAchievements_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }

@@ -8,34 +8,58 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="UserPage">
 
-    <Grid Margin="10 10 10 10" Background="LightSlateGray">
+    <Grid Margin="10" Background="LightSlateGray">
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
+
+        <!-- Строка 0: информация о пользователе и кнопка "Изменить" -->
         <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
             <StackPanel>
                 <TextBlock Text="{Binding CurrentUserName}"/>
                 <TextBlock Text="{Binding CurrentUserEmail}"/>
             </StackPanel>
         </Border>
-        <Button x:Name="EditBtn" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" Style="{StaticResource MaterialDesignFlatDarkBgButton}" HorizontalAlignment="Right" Margin="5" Content="Изменить"/>
-        <Border BorderBrush="White" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2" Padding="30">
-            
-        </Border>
+
+        <Button x:Name="EditBtn" 
+            Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" 
+            Style="{StaticResource MaterialDesignFlatDarkBgButton}" 
+            HorizontalAlignment="Right" Margin="5" 
+            Content="Изменить"/>
+
+        <!-- Строка 1: Frame для достижений (занимает все столбцы) -->
+        <Frame x:Name="AchievementsFrame" 
+           Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" 
+           Margin="5" 
+           NavigationUIVisibility="Hidden" 
+           Source="/Views/Pages/AchievementsPage.xaml" 
+           Height="300"/>
+
+        <!-- Строка 2: прозрачная кнопка "Все достижения" (под фреймом, на всю ширину) -->
+        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="6"
+            Padding="10,5"
+            Click="OpenAllAchievements_Click"
+                Style="{StaticResource MaterialDesignFlatLightButton}">
+            <TextBlock Text="Все достижения" 
+                   Foreground="White" 
+                   HorizontalAlignment="Center"/>
+        </Button>
+
+        <!-- Здесь могут быть остальные элементы в строках 3...7 по вашему усмотрению -->
     </Grid>
 </Page>

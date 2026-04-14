@@ -11,6 +11,9 @@
     <Compile Update="Views\AuthWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Dialogs\TaskEditWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Pages\AchievementsPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

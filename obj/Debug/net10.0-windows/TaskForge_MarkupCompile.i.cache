@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET10_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NET9_0_OR_GREATER;NET10_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 C:\Users\azver\source\repos\TaskForge\App.xaml
-8-1873921821
+9818471822
 221941378817
-251974593086
+281410821429
 237-1895900425
-Views\AuthPages\LogInPage.xaml;Views\AuthPages\SignUpPage.xaml;Views\AuthWindow.xaml;Views\MainWindow.xaml;Views\Pages\AchievementsPage.xaml;Views\Pages\ProjectPage.xaml;Views\Pages\TaskPage.xaml;Views\Pages\UserPage.xaml;
+Views\AuthPages\LogInPage.xaml;Views\AuthPages\SignUpPage.xaml;Views\AuthWindow.xaml;Views\Dialogs\TaskEditWindow.xaml;Views\MainWindow.xaml;Views\Pages\AchievementsPage.xaml;Views\Pages\ProjectPage.xaml;Views\Pages\TaskPage.xaml;Views\Pages\UserPage.xaml;
 
-True
+False
 

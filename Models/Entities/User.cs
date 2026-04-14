@@ -18,7 +18,5 @@ namespace TaskForge.Models.Entities
         public ICollection<TaskItem> Tasks { get; set; }
         public ICollection<Project> Projects { get; set; }
         public ICollection<User_Achievement> Users_Achievements { get; set; }
-
-
     }
 }
