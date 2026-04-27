@@ -7,19 +7,31 @@
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Style="{StaticResource MaterialDesignWindow}"
-        Title="Task Forge" Height="450" Width="800"
+        Title="Task Forge" 
+        Height="600" Width="1000"
+        MinWidth="800" MinHeight="450"
         WindowStartupLocation="CenterScreen">
     <materialDesign:DialogHost x:Name="RootDialogHost" Identifier="RootDialog">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
-                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Background="Black">
                 <Button x:Name="ProfileBtn" Content="Пользователь" Margin="5 5 5 5" Click="ProfileBtn_Click"/>
                 <Button x:Name="TaskBtn" Content="Задачи" Margin="5 5 5 5" Click="TaskBtn_Click"/>
                 <Button x:Name="ProjectBtn" Content="Проекты" Margin="5 5 5 5" Click="ProjectBtn_Click"/>
             </StackPanel>
+            <Button x:Name="Logout" 
+                    Margin="10" 
+                    Width="50"
+                    Height="35"
+                    Click="Logout_Click"
+                    Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom">
+                <materialDesign:PackIcon Kind="Logout"/>
+            </Button>
             <Frame Grid.Column="1" x:Name="MainFrame" NavigationUIVisibility="Hidden" />
         </Grid>
     </materialDesign:DialogHost>

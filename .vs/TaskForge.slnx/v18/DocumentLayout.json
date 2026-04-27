@@ -3,20 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\azver\\source\\repos\\TaskForge\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\views\\authpages\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:views\\authpages\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\views\\authpages\\signuppage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:views\\authpages\\signuppage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\views\\authwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:views\\authwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\views\\authwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:views\\authwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,43 +42,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\App.xaml.cs",
-              "RelativeDocumentMoniker": "App.xaml.cs",
-              "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\App.xaml.cs",
-              "RelativeToolTip": "App.xaml.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAAwCwAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T14:08:22.382Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "App.xaml",
-              "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\App.xaml",
-              "RelativeDocumentMoniker": "App.xaml",
-              "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\App.xaml",
-              "RelativeToolTip": "App.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-04-14T15:31:02.817Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "Views\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\MainWindow.xaml",
-              "RelativeToolTip": "Views\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-04-14T14:25:08.461Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -71,9 +52,98 @@
               "RelativeDocumentMoniker": "Views\\MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\MainWindow.xaml.cs",
               "RelativeToolTip": "Views\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAuwB8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAowCQAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T14:09:28.912Z"
+              "WhenOpened": "2026-04-27T11:28:12.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Views\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\MainWindow.xaml",
+              "RelativeToolTip": "Views\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-27T11:31:42.953Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\App.xaml.cs",
+              "RelativeDocumentMoniker": "App.xaml.cs",
+              "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\App.xaml.cs",
+              "RelativeToolTip": "App.xaml.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAwwEAAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-27T11:29:09.177Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LogInPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\AuthPages\\LogInPage.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\AuthPages\\LogInPage.xaml.cs",
+              "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\AuthPages\\LogInPage.xaml.cs",
+              "RelativeToolTip": "Views\\AuthPages\\LogInPage.xaml.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwBoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-27T11:19:17.325Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SignUpPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\AuthPages\\SignUpPage.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\AuthPages\\SignUpPage.xaml.cs",
+              "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\AuthPages\\SignUpPage.xaml.cs",
+              "RelativeToolTip": "Views\\AuthPages\\SignUpPage.xaml.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAgwCQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-27T11:20:58.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AuthWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\AuthWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\AuthWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\AuthWindow.xaml.cs",
+              "RelativeToolTip": "Views\\AuthWindow.xaml.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAIwDoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-27T11:37:47.251Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\App.xaml",
+              "RelativeDocumentMoniker": "App.xaml",
+              "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\App.xaml",
+              "RelativeToolTip": "App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-27T11:38:49.443Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AuthWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\AuthWindow.xaml",
+              "RelativeDocumentMoniker": "Views\\AuthWindow.xaml",
+              "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\AuthWindow.xaml",
+              "RelativeToolTip": "Views\\AuthWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-27T11:24:40.259Z",
+              "EditorCaption": ""
             }
           ]
         }

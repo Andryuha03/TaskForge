@@ -1,65 +1,80 @@
 ﻿<Page x:Class="TaskForge.Views.Pages.UserPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:TaskForge.Views.Pages"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="UserPage">
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      Title="Профиль пользователя">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Margin="16">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-    <Grid Margin="10" Background="LightSlateGray">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-        </Grid.ColumnDefinitions>
+            <!-- Карточка пользователя -->
+            <materialDesign:Card Grid.Row="0" 
+                                 UniformCornerRadius="12" 
+                                 Padding="16" 
+                                 Margin="0,0,0,16">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
 
-        <!-- Строка 0: информация о пользователе и кнопка "Изменить" -->
-        <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
-            <StackPanel>
-                <TextBlock Text="{Binding CurrentUserName}"/>
-                <TextBlock Text="{Binding CurrentUserEmail}"/>
-            </StackPanel>
-        </Border>
+                    <!-- Аватар (иконка) -->
+                    <materialDesign:PackIcon Grid.Column="0" 
+                                             Kind="AccountCircle" 
+                                             Width="64" Height="64"
+                                             VerticalAlignment="Center"/>
 
-        <Button x:Name="EditBtn" 
-            Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" 
-            Style="{StaticResource MaterialDesignFlatDarkBgButton}" 
-            HorizontalAlignment="Right" Margin="5" 
-            Content="Изменить"/>
+                    <!-- Информация -->
+                    <StackPanel Grid.Column="1" Margin="16,0">
+                        <TextBlock Text="{Binding CurrentUserName}" 
+                                   Style="{StaticResource MaterialDesignHeadline6TextBlock}"/>
+                        <TextBlock Text="{Binding CurrentUserEmail}" 
+                                   Style="{StaticResource MaterialDesignBody2TextBlock}"
+                                   Foreground="{DynamicResource MaterialDesignBodyLight}"/>
+                        <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                            <materialDesign:Chip Margin="0,0,8,0">
+                                <TextBlock>
+                                    <Run Text="Уровень: "/>
+                                    <Run Text="{Binding CurrentUserLevel, Mode=OneWay}"/>
+                                </TextBlock>
+                                    </materialDesign:Chip>
+                                    <materialDesign:Chip>
+                                <TextBlock>
+                                    <Run Text="Опыт: "/>
+                                    <Run Text="{Binding CurrentUserExp, Mode=OneWay}"/>
+                                    <Run Text=" XP"/>
+                                </TextBlock>
+                            </materialDesign:Chip>
+                        </StackPanel>
+                    </StackPanel>
 
-        <!-- Строка 1: Frame для достижений (занимает все столбцы) -->
-        <Frame x:Name="AchievementsFrame" 
-           Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" 
-           Margin="5" 
-           NavigationUIVisibility="Hidden" 
-           Source="/Views/Pages/AchievementsPage.xaml" 
-           Height="300"/>
+                    <!-- Кнопка редактирования -->
+                    <Button Grid.Column="2" 
+                            Style="{StaticResource MaterialDesignIconButton}"
+                            ToolTip="Редактировать профиль"
+                            Click="EditProfile_Click">
+                        <materialDesign:PackIcon Kind="Edit"/>
+                    </Button>
+                </Grid>
+            </materialDesign:Card>
 
-        <!-- Строка 2: прозрачная кнопка "Все достижения" (под фреймом, на всю ширину) -->
-        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="6"
-            Padding="10,5"
-            Click="OpenAllAchievements_Click"
-                Style="{StaticResource MaterialDesignFlatLightButton}">
-            <TextBlock Text="Все достижения" 
-                   Foreground="White" 
-                   HorizontalAlignment="Center"/>
-        </Button>
+            <!-- Выполненные задачи -->
+            <Expander Grid.Row="1" 
+                      Header="Выполненные задачи" 
+                      IsExpanded="True"
+                      Margin="0,0,0,16"
+                      Style="{StaticResource MaterialDesignExpander}">
+                <Frame x:Name="CompletedTasksFrame" 
+                       NavigationUIVisibility="Hidden"
+                       Height="300"/>
+            </Expander>
 
-        <!-- Здесь могут быть остальные элементы в строках 3...7 по вашему усмотрению -->
-    </Grid>
+            
+        </Grid>
+    </ScrollViewer>
 </Page>

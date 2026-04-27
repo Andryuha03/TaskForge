@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using TaskForge.Models.Entities;
 using TaskForge.Models.Repositories;
 using TaskForge.Views.Pages;
+using TaskForge.Helpers;
 
 namespace TaskForge.ViewModels
 {
@@ -26,7 +27,7 @@ namespace TaskForge.ViewModels
                 {
                     _name = value;
                     OnPropertyChanged(nameof(Name));
-                    ((RelayCommand)SaveCommand).RaiseCanExecuteChanged();
+                    (SaveCommand as RelayCommand)?.RaiseCanExecuteChanged();
                 }
             }
         }
@@ -55,6 +56,9 @@ namespace TaskForge.ViewModels
             _editingTask = taskToEdit;
             _isNew = taskToEdit == null;
 
+            SaveCommand = new RelayCommand(Save, CanSave);
+            CancelCommand = new RelayCommand(() => RequestClose?.Invoke(this, false));
+
             LoadProjects();
 
             if (!_isNew)
@@ -65,9 +69,6 @@ namespace TaskForge.ViewModels
                 RewardExp = _editingTask.Reward_exp;
                 ProjectId = _editingTask.Project_id;
             }
-
-            SaveCommand = new RelayCommand(Save, CanSave);
-            CancelCommand = new RelayCommand(() => RequestClose?.Invoke(this, false));
         }
 
         private async void LoadProjects()

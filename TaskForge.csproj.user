@@ -17,6 +17,9 @@
     <Compile Update="Views\Pages\AchievementsPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Pages\CompletedTasksPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Pages\ProjectPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

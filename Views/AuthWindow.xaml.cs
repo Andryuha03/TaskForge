@@ -37,15 +37,22 @@ namespace TaskForge.Views
         private void NavigateToLogin()
         {
             AuthFrame.Navigate(_serviceProvider.GetRequiredService<LogInPage>());
-            SignUpBtn.Visibility = Visibility.Collapsed;
-            LogInBtn.Visibility = Visibility.Visible;
+            SignUpBtn.Visibility = Visibility.Visible;
+            LogInBtn.Visibility = Visibility.Collapsed;
         }
 
         private void NavigateToSignUp()
         {
             AuthFrame.Navigate(_serviceProvider.GetRequiredService<SignUpPage>());
-            SignUpBtn.Visibility = Visibility.Visible;
-            LogInBtn.Visibility = Visibility.Collapsed;
+            SignUpBtn.Visibility = Visibility.Collapsed;
+            LogInBtn.Visibility = Visibility.Visible;
+        }
+
+        public void OnSuccessfulLogin()
+        {
+            var mainWindow = _serviceProvider.GetRequiredService<MainWindow>();
+            mainWindow.Show();
+            this.Close();
         }
     }
 }

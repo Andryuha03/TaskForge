@@ -1,37 +1,48 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Microsoft.Extensions.DependencyInjection;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using TaskForge.Models.Repositories;
 
 namespace TaskForge.Views.Pages
 {
-    /// <summary>
-    /// Логика взаимодействия для UserPage.xaml
-    /// </summary>
     public partial class UserPage : Page
     {
         private readonly IUserSession _userSession;
-        public UserPage(IUserSession userSession)
+        private readonly ApplicationDBContext _context;
+        private readonly IServiceProvider _serviceProvider;
+        private CompletedTasksPage _completedTaskPage;
+
+        public UserPage(IUserSession userSession, ApplicationDBContext context, IServiceProvider serviceProvider)
         {
             InitializeComponent();
             _userSession = userSession;
+            _context = context;
+            _serviceProvider = serviceProvider;
+            DataContext = this;
 
-            this.DataContext = _userSession;
+            Loaded += (s, e) => LoadCompletedTaskPage();
         }
 
-        private void OpenAllAchievements_Click(object sender, RoutedEventArgs e)
+        private void LoadCompletedTaskPage()
         {
-
+            _completedTaskPage = _serviceProvider.GetRequiredService<CompletedTasksPage>();
+            CompletedTasksFrame.Navigate(_completedTaskPage);
         }
 
+        public void RefreshCompletedTask()
+        {
+            _completedTaskPage?.LoadCompletedTasksAsync();
+        }
+
+        public string CurrentUserName => _userSession.CurrentUserName;
+        public string CurrentUserEmail => _userSession.CurrentUserEmail;
+        public int CurrentUserLevel => _userSession.CurrentUserLevel;
+        public int CurrentUserExp => _userSession.CurrentUserTotalEx;
+
+        private void EditProfile_Click(object sender, RoutedEventArgs e)
+        {
+            // Открыть диалог редактирования профиля
+            // Можно реализовать отдельно
+        }
     }
 }

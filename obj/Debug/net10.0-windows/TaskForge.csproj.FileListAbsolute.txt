@@ -354,3 +354,5 @@ C:\Users\azver\source\repos\TaskForge\bin\Debug\net10.0-windows\appsettings.json
 C:\Users\azver\source\repos\TaskForge\obj\Debug\net10.0-windows\Views\Dialogs\TaskEditWindow.baml
 C:\Users\azver\source\repos\TaskForge\obj\Debug\net10.0-windows\Views\Dialogs\TaskEditWindow.g.cs
 C:\Users\azver\source\repos\TaskForge\obj\Debug\net10.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\azver\source\repos\TaskForge\obj\Debug\net10.0-windows\Views\Pages\CompletedTasksPage.baml
+C:\Users\azver\source\repos\TaskForge\obj\Debug\net10.0-windows\Views\Pages\CompletedTasksPage.g.cs

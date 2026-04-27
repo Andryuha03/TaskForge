@@ -5,24 +5,24 @@ namespace TaskForge.Models.Repositories
 {
     public interface IUserSession
     {
-        int CurrentUserId { get; }
-        string CurrentUserName { get; }
-        string CurrentUserEmail { get; }
-        int CurrentUserLevel { get; }
-        int CurrentUserTotalEx {  get; }
-        DateTime CurrentUserCreatedAt { get; }
+        int CurrentUserId { get; set; }
+        string CurrentUserName { get; set; }
+        string CurrentUserEmail { get; set; }
+        int CurrentUserLevel { get; set; }
+        int CurrentUserTotalEx {  get; set; }
+        DateTime CurrentUserCreatedAt { get; set; }
         void SetCurrentUser(User user);
         void Clear();
         
     }
     public class UserSession : IUserSession
     {
-        public int CurrentUserId { get; private set; }
-        public string CurrentUserName { get; private set; } = string.Empty;
-        public string CurrentUserEmail { get; private set; } = string.Empty;
-        public int CurrentUserLevel {  get; private set; }
-        public int CurrentUserTotalEx {  get; private set; }
-        public DateTime CurrentUserCreatedAt {  get; private set; }
+        public int CurrentUserId { get; set; }
+        public string CurrentUserName { get; set; } = string.Empty;
+        public string CurrentUserEmail { get; set; } = string.Empty;
+        public int CurrentUserLevel {  get; set; }
+        public int CurrentUserTotalEx {  get; set; }
+        public DateTime CurrentUserCreatedAt {  get; set; }
         public bool IsLoggedIn => CurrentUserId > 0;
 
 

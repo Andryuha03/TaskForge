@@ -5,10 +5,13 @@ using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media.Animation;
+using System.Windows.Threading;
 using TaskForge.Models.Entities;
 using TaskForge.Models.Repositories;
 using TaskForge.ViewModels;
 using TaskForge.Views.Dialogs;
+using TaskForge.Helpers;
 
 
 namespace TaskForge.Views.Pages
@@ -18,6 +21,10 @@ namespace TaskForge.Views.Pages
         private readonly IUserSession _userSession;
         private readonly ApplicationDBContext _dbContext;
         private ObservableCollection<TaskItem> _tasks;
+        private DispatcherTimer _timer;
+        private int? _activeTaskId;
+        private DateTime _timerStartTime;
+        private int _accumulatedSeconds;
         public ObservableCollection<TaskItem> Tasks
         {
             get => _tasks;
@@ -27,6 +34,7 @@ namespace TaskForge.Views.Pages
         public ICommand AddTaskCommand { get; }
         public ICommand EditTaskCommand { get; }
         public ICommand CompleteTaskCommand { get; }
+        public ICommand ToggleTimerCommand { get; }
 
         public TaskPage(ApplicationDBContext dbContext, IUserSession userSession)
         {
@@ -39,6 +47,11 @@ namespace TaskForge.Views.Pages
             AddTaskCommand = new RelayCommand(OnAddTask);
             EditTaskCommand = new RelayCommand<TaskItem>(OnEditTask);
             CompleteTaskCommand = new RelayCommand<TaskItem>(OnCompleteTask);
+            ToggleTimerCommand = new RelayCommand<TaskItem>(OnToggleTimer);
+
+            _timer = new DispatcherTimer();
+            _timer.Interval = TimeSpan.FromSeconds(1);
+            _timer.Tick += TimerTick;
 
             Loaded += async (s, e) => await LoadTasksAsync();
         }
@@ -46,8 +59,8 @@ namespace TaskForge.Views.Pages
         private async Task LoadTasksAsync()
         {
             var tasksFromDb = await _dbContext.Tasks
-                .Where(t => t.User_id == _userSession.CurrentUserId)
-                .OrderByDescending(t=>t.Created_at)
+                .Where(t => t.User_id == _userSession.CurrentUserId && t.Status != "Completed")
+                .OrderByDescending(t => t.Created_at)
                 .ToListAsync();
 
             Tasks.Clear();
@@ -79,6 +92,11 @@ namespace TaskForge.Views.Pages
         {
             if (task == null || task.Status == "Completed") return;
 
+            if (_activeTaskId == task.Id)
+            {
+                StopTimerAndSave();
+            }
+
             // Обновляем статус задачи
             task.Status = "Completed";
             task.Update_at = DateTime.Now;
@@ -96,9 +114,82 @@ namespace TaskForge.Views.Pages
 
             // Проверка достижений
             await CheckAndUnlockAchievements(task.User_id);
-
             // Обновляем список задач
             await LoadTasksAsync();
+
+            RefreshCompletedTasksInUserPage();
+            await LoadTasksAsync();
+        }
+
+        private void RefreshCompletedTasksInUserPage()
+        {
+            var mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+            if (mainWindow?.MainFrame?.Content is UserPage userPage)
+            {
+                userPage.RefreshCompletedTask();
+            }
+        }
+        private void OnToggleTimer(TaskItem task)
+        {
+            if (task == null) return;
+            if (_activeTaskId == task.Id)
+            {
+                StopTimerAndSave();
+            }
+            else
+            {
+                if (_activeTaskId.HasValue)
+                {
+                    StopTimerAndSave();
+                }
+                StartTimer(task);
+            }
+        }
+
+        private void StartTimer(TaskItem task)
+        {
+            _activeTaskId = task.Id;
+            _accumulatedSeconds = task.Actual_time;
+            _timerStartTime = DateTime.Now;
+            _timer.Start();
+
+        }
+
+        private async Task StopTimerAndSave()
+        {
+            if (!_activeTaskId.HasValue) return;
+            _timer?.Stop();
+
+            var elapsed = (int)(DateTime.Now - _timerStartTime).TotalSeconds;
+            _accumulatedSeconds += elapsed;
+
+            var task = Tasks.FirstOrDefault(t => t.Id == _activeTaskId.Value);
+            if (task != null)
+            {
+                task.Actual_time = _accumulatedSeconds;
+                OnPropertyChanged(nameof(Task));
+
+                var dbTask = await _dbContext.Tasks.FindAsync(_activeTaskId.Value);
+                if (dbTask != null)
+                {
+                    dbTask.Actual_time = _accumulatedSeconds;
+                    await _dbContext.SaveChangesAsync();
+                }
+            }
+        }
+
+        private void TimerTick(object sender, EventArgs e)
+        {
+            if (!_activeTaskId.HasValue) return;
+            var elapsed = (int)(DateTime.Now - _timerStartTime).TotalSeconds;
+            var total = _accumulatedSeconds + elapsed;
+
+            var task = Tasks.FirstOrDefault(t => t.Id == _activeTaskId.Value);
+            if (task != null)
+            {
+                task.Actual_time = total;
+                OnPropertyChanged(nameof(Tasks));
+            }
         }
 
         private async Task CheckAndUnlockAchievements(int userId)
@@ -154,34 +245,4 @@ namespace TaskForge.Views.Pages
             OnAddTask();
         }
     }
-    public class RelayCommand : ICommand
-    {
-        public void RaiseCanExecuteChanged() => CanExecuteChanged?.Invoke(this, EventArgs.Empty);
-
-        private readonly Action _execute;
-        private readonly Func<bool> _canExecute;
-        public RelayCommand(Action execute, Func<bool> canExecute = null)
-        {
-            _execute = execute;
-            _canExecute = canExecute;
-        }
-        public bool CanExecute(object parameter) => _canExecute == null || _canExecute();
-        public void Execute(object parameter) => _execute();
-        public event EventHandler CanExecuteChanged;
-    }
-
-    public class RelayCommand<T> : ICommand
-    {
-        private readonly Action<T> _execute;
-        private readonly Predicate<T> _canExecute;
-        public RelayCommand(Action<T> execute, Predicate<T> canExecute = null)
-        {
-            _execute = execute;
-            _canExecute = canExecute;
-        }
-        public bool CanExecute(object parameter) => _canExecute == null || _canExecute((T)parameter);
-        public void Execute(object parameter) => _execute((T)parameter);
-        public event EventHandler CanExecuteChanged;
-    }
-
 }

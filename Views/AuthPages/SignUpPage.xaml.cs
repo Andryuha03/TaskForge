@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -65,9 +66,11 @@ namespace TaskForge.Views.AuthPages
                     MessageBoxButton.OK,
                     MessageBoxImage.Information);
 
-                _mainWindow.ShowMainContent();
-                _mainWindow.Show();
-                Window.GetWindow(this).Close();
+                var sessionStorage = App.serviceProvider.GetRequiredService<ISessionStorage>();
+                sessionStorage.SaveUserId(newUser.Id);
+
+                var authWindow = Window.GetWindow(this) as AuthWindow;
+                authWindow?.OnSuccessfulLogin();
 
             }
             catch (Exception ex)

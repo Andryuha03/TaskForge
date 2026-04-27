@@ -14,7 +14,7 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="Task Forge" HorizontalAlignment="Center" FontSize="32" Style="{StaticResource MaterialDesignBody2TextBlock}"/>
-        <Frame x:Name="AuthFrame" Grid.Row="1"  NavigationUIVisibility="Hidden" />
+        <Frame x:Name="AuthFrame" Grid.Row="1"  NavigationUIVisibility="Hidden" Source="/Views/AuthPages/LogInPage.xaml"/>
         <DockPanel Grid.Row="2" >
             <Button x:Name="LogInBtn" Content="Войти" Width="90" HorizontalAlignment="Left" Margin="10" Click="LogInBtn_Click"/>
             <Button x:Name="SignUpBtn" Content="Создать" Width="90" HorizontalAlignment="Right"  Margin="10" Click="SignUpBtn_Click"/>

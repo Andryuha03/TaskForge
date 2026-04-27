@@ -1,8 +1,9 @@
-﻿using System.Windows;
-using TaskForge.Models.Repositories;
-using TaskForge.Views.Pages;
+﻿using MaterialDesignThemes.Wpf;
 using Microsoft.Extensions.DependencyInjection;
-using MaterialDesignThemes.Wpf;
+using System.Windows;
+using TaskForge.Models.Repositories;
+using TaskForge.Views;
+using TaskForge.Views.Pages;
 
 namespace TaskForge
 {
@@ -11,17 +12,20 @@ namespace TaskForge
         private readonly IServiceProvider _serviceProvider;
         private readonly IUserSession _userSession;
         private readonly ApplicationDBContext _dbContext;
-        public MainWindow(IUserSession userSession, ApplicationDBContext dbContext)
+        private readonly Func<AuthWindow> _authWindowFactory;
+        public MainWindow(IUserSession userSession, ApplicationDBContext dbContext, Func<AuthWindow> authWindowFactory)
         {
             InitializeComponent();
             _userSession = userSession;
             _dbContext = dbContext;
-            this.Visibility = Visibility.Hidden;
+            _authWindowFactory = authWindowFactory;
+
         }
 
         private void ProfileBtn_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new UserPage(_userSession));
+            var userPage = App.serviceProvider.GetRequiredService<UserPage>();
+            MainFrame.Navigate(userPage);
         }
 
         private void TaskBtn_Click(object sender, RoutedEventArgs e)
@@ -40,6 +44,16 @@ namespace TaskForge
         public void ShowMainContent()
         {
             this.Visibility = Visibility.Visible;
+        }
+
+        private void Logout_Click(object sender, RoutedEventArgs e)
+        {
+            var sessionStorage = App.serviceProvider.GetRequiredService<ISessionStorage>();
+            sessionStorage?.Clear();
+
+            var authWindow = _authWindowFactory();
+            authWindow.Show();
+            this.Hide();
         }
     }
 }

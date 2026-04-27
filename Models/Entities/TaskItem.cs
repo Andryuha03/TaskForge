@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TaskForge.Models.Entities
 {
-    public class TaskItem
+    public partial class TaskItem
     {
         public int Id { get; set; }
         public int User_id { get; set; }
@@ -21,5 +21,15 @@ namespace TaskForge.Models.Entities
 
         public User User { get; set; }
         public Project Project { get; set; }
+
+        public string ActualTimeDisplay
+        {
+            get
+            {
+                var ts = TimeSpan.FromSeconds(Actual_time);
+                return ts.ToString(@"hh\:mm\:ss");
+            }
+        }
+
     }
 }

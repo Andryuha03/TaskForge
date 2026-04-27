@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using System.Windows;
 using System.Windows.Controls;
 using TaskForge.Models.Entities;
@@ -26,13 +27,11 @@ namespace TaskForge.Views.AuthPages
         {
             string name = textBoxLogIn.Text.Trim();
             string password = passBox.Password;
-
             try
             {
 
                 {
                     User? user = await _userRepository.GetUserAsync(name);
-
                     if (user == null || !BC.Verify(password, user.Password))
                     {
                         MessageBox.Show($"Неверное имя или пароль",
@@ -42,16 +41,12 @@ namespace TaskForge.Views.AuthPages
                         return;
                     }
 
-                    _userSession.SetCurrentUser(user);
+                    var sessionStorage = App.serviceProvider.GetRequiredService<ISessionStorage>();
+                    sessionStorage.SaveUserId(user.Id);
 
-                    MessageBox.Show($"Добро пожаловать, {name}",
-                    "Успешный вход",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Information);
+                    var authWindow = Window.GetWindow(this) as AuthWindow;
+                    authWindow?.OnSuccessfulLogin();
 
-                    
-                    _mainWindow.Show();
-                    Window.GetWindow(this).Close();
                 }
             }
             catch (Exception ex)
