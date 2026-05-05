@@ -27,12 +27,9 @@ namespace TaskForge.Views.Pages
         }
 
         public ICommand AddProjectCommand { get; }
-        public ICommand EditProjectCommand { get; }
         public ICommand DeleteProjectCommand { get; }
-        public ICommand CompleteProjectCommand { get; }
         public ICommand AddTaskCommand { get; }
         public ICommand CompleteTaskCommand { get; }
-        public ICommand ToggleTimerCommand { get; }
 
         public ProjectPage(ApplicationDBContext context, IUserSession userSession)
         {
@@ -43,12 +40,9 @@ namespace TaskForge.Views.Pages
             DataContext = this;
 
             AddProjectCommand = new RelayCommand(OnAddProject);
-            EditProjectCommand = new RelayCommand<ProjectDisplay>(OnEditProject);
             DeleteProjectCommand = new RelayCommand<ProjectDisplay>(OnDeleteProject);
-            CompleteProjectCommand = new RelayCommand<ProjectDisplay>(OnCompleteProject);
             AddTaskCommand = new RelayCommand<ProjectDisplay>(OnAddTask);
             CompleteTaskCommand = new RelayCommand<TaskItem>(OnCompleteTask);
-            ToggleTimerCommand = new RelayCommand<TaskItem>(OnToggleTimer);
 
             Loaded += async (s, e) => await LoadProjectsAsync();
         }
@@ -56,7 +50,7 @@ namespace TaskForge.Views.Pages
         private async Task LoadProjectsAsync()
         {
             var projects = await _context.Projects
-                .Where(p => p.User_id == _userSession.CurrentUserId)
+                .Where(p => p.User_id == _userSession.CurrentUserId && p.Status != "Completed")
                 .Include(p => p.Tasks)
                 .OrderBy(p => p.Name)
                 .ToListAsync();
@@ -67,7 +61,9 @@ namespace TaskForge.Views.Pages
                 var display = new ProjectDisplay
                 {
                     Project = proj,
-                    Tasks = new ObservableCollection<TaskItem>(proj.Tasks.OrderBy(t => t.Created_at)),
+                    Tasks = new ObservableCollection<TaskItem>(
+                        proj.Tasks.OrderByDescending(t => t.Priority).ThenBy(t => t.Created_at)
+                    ),
                     IsExpanded = false
                 };
                 Projects.Add(display);
@@ -83,16 +79,6 @@ namespace TaskForge.Views.Pages
                 _ = LoadProjectsAsync();
         }
 
-        private void OnEditProject(ProjectDisplay display)
-        {
-            if (display?.Project == null) return;
-            var vm = new ProjectEditViewModel(_context, _userSession.CurrentUserId, display.Project);
-            var window = new ProjectEditWindow(vm);
-            window.Owner = Application.Current.Windows.OfType<Window>().FirstOrDefault(w => w.IsActive);
-            if (window.ShowDialog() == true)
-                _ = LoadProjectsAsync();
-        }
-
         private async void OnDeleteProject(ProjectDisplay display)
         {
             if (display?.Project == null) return;
@@ -101,15 +87,7 @@ namespace TaskForge.Views.Pages
             _context.Projects.Remove(display.Project);
             await _context.SaveChangesAsync();
             await LoadProjectsAsync();
-        }
-
-        private async void OnCompleteProject(ProjectDisplay display)
-        {
-            if (display?.Project == null || display.Project.Status == "Completed") return;
-            display.Project.Status = "Completed";
-            display.Project.Update_at = DateTime.Now;
-            await _context.SaveChangesAsync();
-            await LoadProjectsAsync();
+            RefreshUserPageCompleted();
         }
 
         private void OnAddTask(ProjectDisplay display)
@@ -128,12 +106,26 @@ namespace TaskForge.Views.Pages
             task.Status = "Completed";
             task.Update_at = DateTime.Now;
             await _context.SaveChangesAsync();
+
+            // Проверяем, все ли задачи проекта завершены
+            var project = await _context.Projects
+                .Include(p => p.Tasks)
+                .FirstOrDefaultAsync(p => p.Id == task.Project_id);
+            if (project != null && project.Tasks.All(t => t.Status == "Completed"))
+            {
+                project.Status = "Completed";
+                project.Update_at = DateTime.Now;
+                await _context.SaveChangesAsync();
+            }
             await LoadProjectsAsync();
+            RefreshUserPageCompleted();
         }
 
-        private void OnToggleTimer(TaskItem task)
+        private void RefreshUserPageCompleted()
         {
-            // TODO: реализовать таймер для задач (если нужен)
+            var mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+            if (mainWindow?.MainFrame?.Content is UserPage userPage)
+                userPage.RefreshCompletedProjects();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

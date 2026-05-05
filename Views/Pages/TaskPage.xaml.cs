@@ -122,19 +122,10 @@ namespace TaskForge.Views.Pages
             }
 
             await LoadTasksAsync();
-            RefreshCompletedTasksInUserPage();
 
             
         }
 
-        private void RefreshCompletedTasksInUserPage()
-        {
-            var mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
-            if (mainWindow?.MainFrame?.Content is UserPage userPage)
-            {
-                userPage.RefreshCompletedTask();
-            }
-        }
         private void OnToggleTimer(TaskItem task)
         {
             if (task == null) return;

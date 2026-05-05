@@ -3,52 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\azver\\source\\repos\\TaskForge\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\views\\pages\\projectpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:views\\pages\\projectpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\views\\viewmodels\\projectdisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:views\\viewmodels\\projectdisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\views\\pages\\projectpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:views\\pages\\projectpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\views\\pages\\taskpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:views\\pages\\taskpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\views\\pages\\userpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:views\\pages\\userpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\views\\viewmodels\\taskeditviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:views\\viewmodels\\taskeditviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\models\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:models\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\views\\dialogs\\taskeditwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:views\\dialogs\\taskeditwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\models\\entities\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:models\\entities\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\models\\entities\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:models\\entities\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\views\\authpages\\signuppage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:views\\authpages\\signuppage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\views\\dialogs\\editprofilewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:views\\dialogs\\editprofilewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|c:\\users\\azver\\source\\repos\\taskforge\\views\\viewmodels\\projectdisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C94FF983-B23C-F979-D280-DBA4C1C39248}|TaskForge.csproj|solutionrelative:views\\viewmodels\\projectdisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,155 +26,59 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ProjectDisplay.cs",
-              "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\ViewModels\\ProjectDisplay.cs",
-              "RelativeDocumentMoniker": "Views\\ViewModels\\ProjectDisplay.cs",
-              "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\ViewModels\\ProjectDisplay.cs",
-              "RelativeToolTip": "Views\\ViewModels\\ProjectDisplay.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBgAAAAJAAAAAAAAAA==",
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\Models\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "Models\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\Models\\Entities\\User.cs",
+              "RelativeToolTip": "Models\\Entities\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-05T11:59:31.939Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "Views\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\MainWindow.xaml",
-              "RelativeToolTip": "Views\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-05-05T11:11:07.935Z",
+              "WhenOpened": "2026-05-05T13:24:47.414Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "Views\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\MainWindow.xaml.cs",
-              "RelativeToolTip": "Views\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwDMAAAABAAAAAAAAAA==",
+              "Title": "Project.cs",
+              "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\Models\\Entities\\Project.cs",
+              "RelativeDocumentMoniker": "Models\\Entities\\Project.cs",
+              "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\Models\\Entities\\Project.cs",
+              "RelativeToolTip": "Models\\Entities\\Project.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-28T13:23:24.762Z",
+              "WhenOpened": "2026-05-05T13:24:42.613Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ProjectPage.xaml",
-              "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\Pages\\ProjectPage.xaml",
-              "RelativeDocumentMoniker": "Views\\Pages\\ProjectPage.xaml",
-              "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\Pages\\ProjectPage.xaml",
-              "RelativeToolTip": "Views\\Pages\\ProjectPage.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-05-05T11:22:33.516Z",
+              "Title": "ProjectDisplay.cs",
+              "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\ViewModels\\ProjectDisplay.cs",
+              "RelativeDocumentMoniker": "Views\\ViewModels\\ProjectDisplay.cs",
+              "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\ViewModels\\ProjectDisplay.cs",
+              "RelativeToolTip": "Views\\ViewModels\\ProjectDisplay.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwBQAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-05T13:24:03.348Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ProjectPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\Pages\\ProjectPage.xaml.cs",
-              "RelativeDocumentMoniker": "Views\\Pages\\ProjectPage.xaml.cs",
-              "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\Pages\\ProjectPage.xaml.cs",
-              "RelativeToolTip": "Views\\Pages\\ProjectPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-05T11:26:20.779Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "UserPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\Pages\\UserPage.xaml.cs",
               "RelativeDocumentMoniker": "Views\\Pages\\UserPage.xaml.cs",
               "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\Pages\\UserPage.xaml.cs",
               "RelativeToolTip": "Views\\Pages\\UserPage.xaml.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAowEMAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAADoAAAAAAAAAAAAowEYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-05T11:21:34.928Z",
+              "WhenOpened": "2026-05-05T13:23:39.904Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "TaskPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\Pages\\TaskPage.xaml.cs",
-              "RelativeDocumentMoniker": "Views\\Pages\\TaskPage.xaml.cs",
-              "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\Pages\\TaskPage.xaml.cs",
-              "RelativeToolTip": "Views\\Pages\\TaskPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-28T13:02:51.118Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "TaskEditWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\Dialogs\\TaskEditWindow.xaml",
-              "RelativeDocumentMoniker": "Views\\Dialogs\\TaskEditWindow.xaml",
-              "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\Dialogs\\TaskEditWindow.xaml",
-              "RelativeToolTip": "Views\\Dialogs\\TaskEditWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-04-28T12:43:45.774Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "TaskEditViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\ViewModels\\TaskEditViewModel.cs",
-              "RelativeDocumentMoniker": "Views\\ViewModels\\TaskEditViewModel.cs",
-              "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\ViewModels\\TaskEditViewModel.cs",
-              "RelativeToolTip": "Views\\ViewModels\\TaskEditViewModel.cs",
-              "ViewState": "AgIAAH0AAAAAAAAAAAAwwJgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-28T12:38:44.81Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "TaskItem.cs",
-              "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\Models\\Entities\\TaskItem.cs",
-              "RelativeDocumentMoniker": "Models\\Entities\\TaskItem.cs",
-              "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\Models\\Entities\\TaskItem.cs",
-              "RelativeToolTip": "Models\\Entities\\TaskItem.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAA1wCUAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-28T12:24:38.817Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "SignUpPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\AuthPages\\SignUpPage.xaml.cs",
-              "RelativeDocumentMoniker": "Views\\AuthPages\\SignUpPage.xaml.cs",
-              "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\AuthPages\\SignUpPage.xaml.cs",
-              "RelativeToolTip": "Views\\AuthPages\\SignUpPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-28T12:46:18.924Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "EditProfileWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\Dialogs\\EditProfileWindow.xaml.cs",
-              "RelativeDocumentMoniker": "Views\\Dialogs\\EditProfileWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\azver\\source\\repos\\TaskForge\\Views\\Dialogs\\EditProfileWindow.xaml.cs",
-              "RelativeToolTip": "Views\\Dialogs\\EditProfileWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-28T12:45:14.209Z"
             }
           ]
         }

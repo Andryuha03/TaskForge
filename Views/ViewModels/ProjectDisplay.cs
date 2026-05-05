@@ -25,12 +25,13 @@ namespace TaskForge.ViewModels
         {
             get
             {
-                if (Project == null || string.IsNullOrEmpty(Project.Color_mark))
-                    return new SolidColorBrush(Colors.LightGray);
+                if (Project == null) return new SolidColorBrush(Colors.LightGray);
+                string color = Project.Color_mark;
+                if (string.IsNullOrEmpty(color)) color = "#BBDEFB"; // синий по умолчанию
                 try
                 {
-                    var color = (Color)ColorConverter.ConvertFromString(Project.Color_mark);
-                    return new SolidColorBrush(color);
+                    var c = (Color)ColorConverter.ConvertFromString(color);
+                    return new SolidColorBrush(c);
                 }
                 catch
                 {

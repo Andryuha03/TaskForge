@@ -3,84 +3,71 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       Title="Профиль пользователя">
-    <ScrollViewer VerticalScrollBarVisibility="Auto">
-        <Grid Margin="16">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-            <!-- Карточка пользователя -->
-            <materialDesign:Card Grid.Row="0" 
-                                 UniformCornerRadius="12" 
-                                 Padding="16" 
-                                 Margin="0,0,0,16">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
+        <!-- Кнопка назад -->
+        <Button Content="← На главную" 
+                Command="{Binding GoBackCommand}"
+                Style="{StaticResource MaterialDesignFlatButton}"
+                HorizontalAlignment="Left" 
+                Margin="0,0,0,16"/>
 
-                    <!-- Аватар (иконка) -->
-                    <materialDesign:PackIcon Grid.Column="0" 
-                                             Kind="AccountCircle" 
-                                             Width="64" Height="64"
-                                             VerticalAlignment="Center"/>
-
-                    <!-- Информация -->
-                    <StackPanel Grid.Column="1" Margin="16,0">
-                        <TextBlock Text="{Binding CurrentUserName}" 
-                                   Style="{StaticResource MaterialDesignHeadline6TextBlock}"/>
-                        <TextBlock Text="{Binding CurrentUserEmail}" 
-                                   Style="{StaticResource MaterialDesignBody2TextBlock}"
-                                   Foreground="{DynamicResource MaterialDesignBodyLight}"/>
-                        <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
-                            <materialDesign:Chip Margin="0,0,8,0">
-                                <TextBlock>
-                                    <Run Text="Уровень: "/>
-                                    <Run Text="{Binding CurrentUserLevel, Mode=OneWay}"/>
-                                </TextBlock>
-                                    </materialDesign:Chip>
-                                    <materialDesign:Chip>
-                                <TextBlock>
-                                    <Run Text="Опыт: "/>
-                                    <Run Text="{Binding CurrentUserExp, Mode=OneWay}"/>
-                                    <Run Text=" XP"/>
-                                </TextBlock>
-                            </materialDesign:Chip>
-                        </StackPanel>
+        <!-- Карточка пользователя -->
+        <materialDesign:Card Grid.Row="1" UniformCornerRadius="12" Padding="16" Margin="0,0,0,16">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <materialDesign:PackIcon Grid.Column="0" Kind="AccountCircle" Width="64" Height="64"/>
+                <StackPanel Grid.Column="1" Margin="16,0">
+                    <TextBlock Text="{Binding CurrentUserName}" Style="{StaticResource MaterialDesignHeadline6TextBlock}"/>
+                    <TextBlock Text="{Binding CurrentUserEmail}" Style="{StaticResource MaterialDesignBody2TextBlock}"
+                               Foreground="{DynamicResource MaterialDesignBodyLight}"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                        <materialDesign:Chip Margin="0,0,8,0">
+                            <TextBlock><Run Text="Уровень: "/><Run Text="{Binding CurrentUserLevel, Mode=OneWay}"/></TextBlock>
+                        </materialDesign:Chip>
+                        <materialDesign:Chip>
+                            <TextBlock><Run Text="Опыт: "/><Run Text="{Binding CurrentUserExp, Mode=OneWay}"/><Run Text=" XP"/></TextBlock>
+                        </materialDesign:Chip>
                     </StackPanel>
-                    <StackPanel Grid.Column="2">
-                        <Button Content="Выйти" 
-                            Click="Logout_Click"
-                            Style="{StaticResource MaterialDesignFlatButton}"
-                            HorizontalAlignment="Right" Margin="0,8,0,0">
-                        </Button>
+                </StackPanel>
+                <Button Grid.Column="2" Style="{StaticResource MaterialDesignIconButton}" ToolTip="Редактировать профиль"
+                        Click="EditProfile_Click">
+                    <materialDesign:PackIcon Kind="Edit"/>
+                </Button>
+            </Grid>
+        </materialDesign:Card>
 
-                        <Button  
-                            Style="{StaticResource MaterialDesignIconButton}"
-                            ToolTip="Редактировать профиль"
-                            Click="EditProfile_Click">
-                            <materialDesign:PackIcon Kind="Edit"/>
-                        </Button>
-                    </StackPanel>
-                </Grid>
-            </materialDesign:Card>
-
-            <!-- Выполненные задачи -->
-            <Expander Grid.Row="1" 
-                      Header="Выполненные задачи" 
-                      IsExpanded="True"
-                      Margin="0,0,0,16"
-                      Style="{StaticResource MaterialDesignExpander}">
-                <Frame x:Name="CompletedTasksFrame" 
-                       NavigationUIVisibility="Hidden"
-                       Height="300"/>
-            </Expander>
-
-            
-        </Grid>
-    </ScrollViewer>
+        <!-- Выполненные проекты -->
+        <Expander Grid.Row="2" Header="Завершённые проекты" IsExpanded="True" Style="{StaticResource MaterialDesignExpander}">
+            <ItemsControl ItemsSource="{Binding CompletedProjects}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <materialDesign:Card Margin="0,0,0,8" Padding="12" UniformCornerRadius="8">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0">
+                                    <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding Info}" Foreground="{DynamicResource MaterialDesignBodyLight}"/>
+                                </StackPanel>
+                                <TextBlock Grid.Column="1" Text="{Binding Project.Update_at, StringFormat='dd.MM.yyyy'}"
+                                           VerticalAlignment="Center"/>
+                            </Grid>
+                        </materialDesign:Card>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Expander>
+    </Grid>
 </Page>

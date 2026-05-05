@@ -6,11 +6,10 @@
     <Grid Margin="16">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Заголовок и кнопка добавить проект -->
+        <!-- Заголовок и кнопка добавления проекта -->
         <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Stretch">
             <TextBlock Text="Мои проекты" 
                        Style="{StaticResource MaterialDesignHeadline5TextBlock}"
@@ -23,7 +22,7 @@
         </StackPanel>
 
         <!-- Список проектов -->
-        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" Margin="0,16,0,0">
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="0,16,0,0">
             <ItemsControl ItemsSource="{Binding Projects}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
@@ -33,12 +32,21 @@
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="4"/>
                                 </Grid.RowDefinitions>
-                                <StackPanel Grid.Row="0" Margin="12">
-                                    <Expander Header="{Binding Name}" 
+                                <!-- Верхняя часть: заголовок проекта и кнопка удаления -->
+                                <Grid Grid.Row="0" Margin="12">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Expander Grid.Column="0" 
+                                              Header="{Binding Name}" 
                                               IsExpanded="{Binding IsExpanded, Mode=TwoWay}"
                                               Style="{StaticResource MaterialDesignExpander}">
                                         <Expander.Content>
                                             <StackPanel>
+                                                <TextBlock Text="{Binding Info}" 
+                                                           Foreground="{DynamicResource MaterialDesignBodyLight}"
+                                                           TextWrapping="Wrap" Margin="0,4,0,8"/>
                                                 <ItemsControl ItemsSource="{Binding Tasks}">
                                                     <ItemsControl.ItemTemplate>
                                                         <DataTemplate>
@@ -55,17 +63,10 @@
                                                                                    Foreground="{DynamicResource MaterialDesignBodyLight}"
                                                                                    TextWrapping="Wrap"/>
                                                                         <StackPanel Orientation="Horizontal" Margin="0,4">
-                                                                            <materialDesign:Chip Content="Приор: {Binding Priority}" />
-                                                                            <materialDesign:Chip Content="{Binding Status}" Margin="8,0,0,0"/>
+                                                                            <materialDesign:Chip Content="{Binding Status}" />
                                                                         </StackPanel>
                                                                     </StackPanel>
                                                                     <StackPanel Grid.Column="1" Orientation="Horizontal">
-                                                                        <Button Style="{StaticResource MaterialDesignIconButton}"
-                                                                                ToolTip="Таймер" 
-                                                                                Command="{Binding DataContext.ToggleTimerCommand, RelativeSource={RelativeSource AncestorType=Page}}"
-                                                                                CommandParameter="{Binding}">
-                                                                            <materialDesign:PackIcon Kind="Timer" />
-                                                                        </Button>
                                                                         <Button Style="{StaticResource MaterialDesignIconButton}"
                                                                                 ToolTip="Выполнить" 
                                                                                 Command="{Binding DataContext.CompleteTaskCommand, RelativeSource={RelativeSource AncestorType=Page}}"
@@ -86,7 +87,15 @@
                                             </StackPanel>
                                         </Expander.Content>
                                     </Expander>
-                                </StackPanel>
+                                    <Button Grid.Column="1" 
+                                            Style="{StaticResource MaterialDesignIconButton}"
+                                            ToolTip="Удалить проект"
+                                            Command="{Binding DataContext.DeleteProjectCommand, RelativeSource={RelativeSource AncestorType=Page}}"
+                                            CommandParameter="{Binding}">
+                                        <materialDesign:PackIcon Kind="Delete" />
+                                    </Button>
+                                </Grid>
+                                <!-- Цветная полоса внизу -->
                                 <Border Grid.Row="1" Background="{Binding ColorBrush}" Height="4" CornerRadius="0,0,8,8"/>
                             </Grid>
                         </materialDesign:Card>
