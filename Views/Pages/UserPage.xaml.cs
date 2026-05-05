@@ -1,7 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using TaskForge.Models.Repositories;
+using TaskForge.ViewModels;
+using TaskForge.Views.Dialogs;
 
 namespace TaskForge.Views.Pages
 {
@@ -20,8 +23,23 @@ namespace TaskForge.Views.Pages
             _serviceProvider = serviceProvider;
             DataContext = this;
 
+            _userSession.UserChanged += OnUserChanged;
+
             Loaded += (s, e) => LoadCompletedTaskPage();
         }
+
+        private void OnUserChanged()
+        {
+            OnPropertyChanged(nameof(CurrentUserName));
+            OnPropertyChanged(nameof(CurrentUserEmail));
+            OnPropertyChanged(nameof(CurrentUserLevel));
+            OnPropertyChanged(nameof(CurrentUserExp));
+        }
+
+        public string CurrentUserName => _userSession.CurrentUserName;
+        public string CurrentUserEmail => _userSession.CurrentUserEmail;
+        public int CurrentUserLevel => _userSession.CurrentUserLevel;
+        public int CurrentUserExp => _userSession.CurrentUserTotalEx;
 
         private void LoadCompletedTaskPage()
         {
@@ -34,15 +52,20 @@ namespace TaskForge.Views.Pages
             _completedTaskPage?.LoadCompletedTasksAsync();
         }
 
-        public string CurrentUserName => _userSession.CurrentUserName;
-        public string CurrentUserEmail => _userSession.CurrentUserEmail;
-        public int CurrentUserLevel => _userSession.CurrentUserLevel;
-        public int CurrentUserExp => _userSession.CurrentUserTotalEx;
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string name)=>PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 
         private void EditProfile_Click(object sender, RoutedEventArgs e)
         {
-            // Открыть диалог редактирования профиля
-            // Можно реализовать отдельно
+            var viewModel = new EditProfileViewModel(_userSession, _context);
+            var window = new EditProfileWindow(viewModel);
+            window.Owner = Window.GetWindow(this);
+            window.ShowDialog();
+        }
+        private void Logout_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+            mainWindow?.Logout();
         }
     }
 }

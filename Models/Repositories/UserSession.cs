@@ -13,17 +13,28 @@ namespace TaskForge.Models.Repositories
         DateTime CurrentUserCreatedAt { get; set; }
         void SetCurrentUser(User user);
         void Clear();
-        
+
+        event Action UserChanged;
+        void OnUserChanged();
+
     }
     public class UserSession : IUserSession
     {
-        public int CurrentUserId { get; set; }
+        private int _currentUserId;
+
+        public int CurrentUserId { 
+            get => _currentUserId; 
+            set {  _currentUserId = value; OnUserChanged(); } 
+        }
         public string CurrentUserName { get; set; } = string.Empty;
         public string CurrentUserEmail { get; set; } = string.Empty;
         public int CurrentUserLevel {  get; set; }
         public int CurrentUserTotalEx {  get; set; }
         public DateTime CurrentUserCreatedAt {  get; set; }
         public bool IsLoggedIn => CurrentUserId > 0;
+
+        public event Action UserChanged;
+        public void OnUserChanged() =>UserChanged?.Invoke();
 
 
         public void SetCurrentUser(User user)

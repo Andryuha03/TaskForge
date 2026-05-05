@@ -6,54 +6,88 @@
     <Grid Margin="16">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,16">
-            <TextBlock Text="Проекты" 
+        <!-- Заголовок и кнопка добавить проект -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Stretch">
+            <TextBlock Text="Мои проекты" 
                        Style="{StaticResource MaterialDesignHeadline5TextBlock}"
                        VerticalAlignment="Center"/>
-            <Button Content="+ Новый проект"
-                    Style="{StaticResource MaterialDesignFlatButton}"
+            <Button Content="+ Проект" 
                     Command="{Binding AddProjectCommand}"
+                    Style="{StaticResource MaterialDesignFlatButton}"
+                    HorizontalAlignment="Right"
                     Margin="16,0,0,0"/>
         </StackPanel>
 
-        <ScrollViewer Grid.Row="1">
+        <!-- Список проектов -->
+        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" Margin="0,16,0,0">
             <ItemsControl ItemsSource="{Binding Projects}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <materialDesign:Card Margin="0,0,0,12" Padding="12" UniformCornerRadius="8">
+                        <materialDesign:Card Margin="0,0,0,16" Padding="0" UniformCornerRadius="8">
                             <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="Auto"/>
-                                </Grid.ColumnDefinitions>
-                                <StackPanel Grid.Column="0">
-                                    <TextBlock Text="{Binding Name}" 
-                                               Style="{StaticResource MaterialDesignSubtitle1TextBlock}"/>
-                                    <TextBlock Text="{Binding Info}" 
-                                               Style="{StaticResource MaterialDesignBody2TextBlock}"
-                                               Foreground="{DynamicResource MaterialDesignBodyLight}"/>
-                                    <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
-                                        <materialDesign:Chip Content="Дедлайн: {Binding Deadline, StringFormat='dd.MM.yyyy'}" />
-                                        <materialDesign:Chip Content="{Binding Status}" Margin="8,0,0,0"/>
-                                    </StackPanel>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="4"/>
+                                </Grid.RowDefinitions>
+                                <StackPanel Grid.Row="0" Margin="12">
+                                    <Expander Header="{Binding Name}" 
+                                              IsExpanded="{Binding IsExpanded, Mode=TwoWay}"
+                                              Style="{StaticResource MaterialDesignExpander}">
+                                        <Expander.Content>
+                                            <StackPanel>
+                                                <ItemsControl ItemsSource="{Binding Tasks}">
+                                                    <ItemsControl.ItemTemplate>
+                                                        <DataTemplate>
+                                                            <Border Background="{Binding Project.ColorLightBrush}" 
+                                                                    CornerRadius="6" Margin="0,0,0,8" Padding="8">
+                                                                <Grid>
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition Width="*"/>
+                                                                        <ColumnDefinition Width="Auto"/>
+                                                                    </Grid.ColumnDefinitions>
+                                                                    <StackPanel Grid.Column="0">
+                                                                        <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
+                                                                        <TextBlock Text="{Binding Info}" 
+                                                                                   Foreground="{DynamicResource MaterialDesignBodyLight}"
+                                                                                   TextWrapping="Wrap"/>
+                                                                        <StackPanel Orientation="Horizontal" Margin="0,4">
+                                                                            <materialDesign:Chip Content="Приор: {Binding Priority}" />
+                                                                            <materialDesign:Chip Content="{Binding Status}" Margin="8,0,0,0"/>
+                                                                        </StackPanel>
+                                                                    </StackPanel>
+                                                                    <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                                                        <Button Style="{StaticResource MaterialDesignIconButton}"
+                                                                                ToolTip="Таймер" 
+                                                                                Command="{Binding DataContext.ToggleTimerCommand, RelativeSource={RelativeSource AncestorType=Page}}"
+                                                                                CommandParameter="{Binding}">
+                                                                            <materialDesign:PackIcon Kind="Timer" />
+                                                                        </Button>
+                                                                        <Button Style="{StaticResource MaterialDesignIconButton}"
+                                                                                ToolTip="Выполнить" 
+                                                                                Command="{Binding DataContext.CompleteTaskCommand, RelativeSource={RelativeSource AncestorType=Page}}"
+                                                                                CommandParameter="{Binding}">
+                                                                            <materialDesign:PackIcon Kind="Check" />
+                                                                        </Button>
+                                                                    </StackPanel>
+                                                                </Grid>
+                                                            </Border>
+                                                        </DataTemplate>
+                                                    </ItemsControl.ItemTemplate>
+                                                </ItemsControl>
+                                                <Button Content="+ Новая задача" 
+                                                        Command="{Binding DataContext.AddTaskCommand, RelativeSource={RelativeSource AncestorType=Page}}"
+                                                        CommandParameter="{Binding}"
+                                                        Style="{StaticResource MaterialDesignFlatButton}"
+                                                        Margin="0,8,0,0"/>
+                                            </StackPanel>
+                                        </Expander.Content>
+                                    </Expander>
                                 </StackPanel>
-                                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
-                                    <Button Style="{StaticResource MaterialDesignIconButton}"
-                                            ToolTip="Редактировать"
-                                            Command="{Binding DataContext.EditProjectCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
-                                            CommandParameter="{Binding}">
-                                        <materialDesign:PackIcon Kind="Edit" />
-                                    </Button>
-                                    <Button Style="{StaticResource MaterialDesignIconButton}"
-                                            ToolTip="Удалить"
-                                            Command="{Binding DataContext.DeleteProjectCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
-                                            CommandParameter="{Binding}">
-                                        <materialDesign:PackIcon Kind="Delete" />
-                                    </Button>
-                                </StackPanel>
+                                <Border Grid.Row="1" Background="{Binding ColorBrush}" Height="4" CornerRadius="0,0,8,8"/>
                             </Grid>
                         </materialDesign:Card>
                     </DataTemplate>

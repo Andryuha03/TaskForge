@@ -52,14 +52,20 @@
                             </materialDesign:Chip>
                         </StackPanel>
                     </StackPanel>
+                    <StackPanel Grid.Column="2">
+                        <Button Content="Выйти" 
+                            Click="Logout_Click"
+                            Style="{StaticResource MaterialDesignFlatButton}"
+                            HorizontalAlignment="Right" Margin="0,8,0,0">
+                        </Button>
 
-                    <!-- Кнопка редактирования -->
-                    <Button Grid.Column="2" 
+                        <Button  
                             Style="{StaticResource MaterialDesignIconButton}"
                             ToolTip="Редактировать профиль"
                             Click="EditProfile_Click">
-                        <materialDesign:PackIcon Kind="Edit"/>
-                    </Button>
+                            <materialDesign:PackIcon Kind="Edit"/>
+                        </Button>
+                    </StackPanel>
                 </Grid>
             </materialDesign:Card>
 

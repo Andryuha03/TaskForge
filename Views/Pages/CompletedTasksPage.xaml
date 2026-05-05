@@ -17,6 +17,7 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
                                 <StackPanel Grid.Column="0">
                                     <TextBlock Text="{Binding Name}" 
@@ -39,6 +40,21 @@
                                            Text="{Binding Update_at, StringFormat='dd.MM.yyyy'}"
                                            VerticalAlignment="Center"
                                            Margin="12,0,0,0"/>
+
+                                <DockPanel Grid.Column="2" HorizontalAlignment="Right">
+                                    <Button Style="{StaticResource MaterialDesignIconButton}"
+                                            ToolTip="Восстановить"
+                                            Command="{Binding DataContext.RestoreTaskCommand, RelativeSource=     {RelativeSource AncestorType=ItemsControl}}"
+                                            CommandParameter="{Binding}">
+                                        <materialDesign:PackIcon Kind="Restore" />
+                                    </Button>
+                                    <Button Style="{StaticResource MaterialDesignIconButton}"
+                                            ToolTip="Удалить"
+                                            Command="{Binding DataContext.DeleteTaskCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                                            CommandParameter="{Binding}">
+                                        <materialDesign:PackIcon Kind="Delete" />
+                                    </Button>
+                                </DockPanel>
                             </Grid>
                         </materialDesign:Card>
                     </DataTemplate>

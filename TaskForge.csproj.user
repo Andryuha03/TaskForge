@@ -11,6 +11,12 @@
     <Compile Update="Views\AuthWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Dialogs\EditProfileWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Dialogs\ProjectEditWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Dialogs\TaskEditWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

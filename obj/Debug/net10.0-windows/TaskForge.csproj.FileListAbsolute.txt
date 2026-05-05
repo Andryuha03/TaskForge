@@ -356,3 +356,7 @@ C:\Users\azver\source\repos\TaskForge\obj\Debug\net10.0-windows\Views\Dialogs\Ta
 C:\Users\azver\source\repos\TaskForge\obj\Debug\net10.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\azver\source\repos\TaskForge\obj\Debug\net10.0-windows\Views\Pages\CompletedTasksPage.baml
 C:\Users\azver\source\repos\TaskForge\obj\Debug\net10.0-windows\Views\Pages\CompletedTasksPage.g.cs
+C:\Users\azver\source\repos\TaskForge\obj\Debug\net10.0-windows\Views\Dialogs\EditProfileWindow.baml
+C:\Users\azver\source\repos\TaskForge\obj\Debug\net10.0-windows\Views\Dialogs\EditProfileWindow.g.cs
+C:\Users\azver\source\repos\TaskForge\obj\Debug\net10.0-windows\Views\Dialogs\ProjectEditWindow.baml
+C:\Users\azver\source\repos\TaskForge\obj\Debug\net10.0-windows\Views\Dialogs\ProjectEditWindow.g.cs

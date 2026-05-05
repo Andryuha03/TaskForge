@@ -77,6 +77,12 @@
                                             CommandParameter="{Binding}">
                                         <materialDesign:PackIcon Kind="Check" />
                                     </Button>
+                                    <Button Style="{StaticResource MaterialDesignIconButton}"
+                                            ToolTip="Удалить"
+                                            Command="{Binding DataContext.DeleteTaskCommand, RelativeSource = {RelativeSource AncestorType=ItemsControl}}"
+                                            CommandParameter="{Binding}">
+                                        <materialDesign:PackIcon Kind="Delete" />
+                                    </Button>
                                 </StackPanel>
                             </Grid>
                         </materialDesign:Card>

@@ -18,6 +18,34 @@ namespace TaskForge.ViewModels
         private TaskItem _editingTask;
         private bool _isNew;
         private string _name;
+        private TimeSpan _plannedTime;
+        private int _plannedTimeSeconds = 86400;
+        public int PlannedTimeSeconds
+        {
+            get => _plannedTimeSeconds;
+            set
+            {
+                if (_plannedTimeSeconds != value)
+                {
+                    _plannedTimeSeconds = value;
+                    OnPropertyChanged(nameof(PlannedTimeSeconds));
+                    OnPropertyChanged(nameof(PlannedTime));
+                }
+            }
+        }
+        public TimeSpan PlannedTime
+        {
+            get => TimeSpan.FromSeconds(PlannedTimeSeconds);
+            set
+            {
+                if (_plannedTime != value)
+                {
+                    _plannedTime = value;
+                    PlannedTimeSeconds = (int)value.TotalSeconds;
+                    OnPropertyChanged(nameof(PlannedTime));
+                }
+            }
+        }
         public string Name
         {
             get=> _name;
@@ -98,7 +126,8 @@ namespace TaskForge.ViewModels
                     Project_id = ProjectId,
                     Status = "Active",
                     Created_at = DateTime.Now,
-                    Update_at = DateTime.Now
+                    Update_at = DateTime.Now,
+                    Planned_time_seconds = this.PlannedTimeSeconds
                 };
                 _context.Tasks.Add(task);
             }
@@ -110,6 +139,7 @@ namespace TaskForge.ViewModels
                 _editingTask.Reward_exp = RewardExp;
                 _editingTask.Project_id = ProjectId;
                 _editingTask.Update_at = DateTime.Now;
+                _editingTask.Planned_time_seconds = this.PlannedTimeSeconds;
             }
 
             await _context.SaveChangesAsync();

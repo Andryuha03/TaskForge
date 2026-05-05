@@ -36,6 +36,9 @@
                   SelectedValue="{Binding ProjectId}"
                   materialDesign:HintAssist.Hint="Проект (необязательно)" 
                   Margin="0,8,0,0"/>
+        <materialDesign:TimePicker SelectedTime="{Binding PlannedTime, Mode=TwoWay}"
+                            Is24Hours="True"
+                            materialDesign:HintAssist.Hint="Плановое время"/>
         
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,16,0,0">
             <Button Content="Отмена" Command="{Binding CancelCommand}" 

@@ -5,6 +5,7 @@ using System.IO;
 using System.Windows;
 using TaskForge.Models.Entities;
 using TaskForge.Models.Repositories;
+using TaskForge.ViewModels;
 using TaskForge.Views;
 using TaskForge.Views.AuthPages;
 using TaskForge.Views.Dialogs;
@@ -59,8 +60,10 @@ namespace TaskForge
             services.AddTransient<AchievementsPage>();
             services.AddTransient<TaskEditWindow>();
             services.AddTransient<CompletedTasksPage>();
-
+            services.AddTransient<EditProfileWindow>();
+            services.AddTransient<EditProfileViewModel>();
             services.AddTransient<AuthWindow>();
+
             services.AddSingleton<Func<AuthWindow>>(sp => () => sp.GetRequiredService<AuthWindow>());
             services.AddSingleton<MainWindow>();
 

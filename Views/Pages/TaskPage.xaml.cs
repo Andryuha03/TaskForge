@@ -5,7 +5,6 @@ using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media.Animation;
 using System.Windows.Threading;
 using TaskForge.Models.Entities;
 using TaskForge.Models.Repositories;
@@ -35,6 +34,7 @@ namespace TaskForge.Views.Pages
         public ICommand EditTaskCommand { get; }
         public ICommand CompleteTaskCommand { get; }
         public ICommand ToggleTimerCommand { get; }
+        public ICommand DeleteTaskCommand { get; }
 
         public TaskPage(ApplicationDBContext dbContext, IUserSession userSession)
         {
@@ -48,6 +48,7 @@ namespace TaskForge.Views.Pages
             EditTaskCommand = new RelayCommand<TaskItem>(OnEditTask);
             CompleteTaskCommand = new RelayCommand<TaskItem>(OnCompleteTask);
             ToggleTimerCommand = new RelayCommand<TaskItem>(OnToggleTimer);
+            DeleteTaskCommand = new RelayCommand<TaskItem>(OnDeleteTask);
 
             _timer = new DispatcherTimer();
             _timer.Interval = TimeSpan.FromSeconds(1);
@@ -56,7 +57,7 @@ namespace TaskForge.Views.Pages
             Loaded += async (s, e) => await LoadTasksAsync();
         }
 
-        private async Task LoadTasksAsync()
+        public async Task LoadTasksAsync()
         {
             var tasksFromDb = await _dbContext.Tasks
                 .Where(t => t.User_id == _userSession.CurrentUserId && t.Status != "Completed")
@@ -92,33 +93,38 @@ namespace TaskForge.Views.Pages
         {
             if (task == null || task.Status == "Completed") return;
 
-            if (_activeTaskId == task.Id)
-            {
-                StopTimerAndSave();
-            }
+            var taskFromDb = await _dbContext.Tasks.FindAsync(task.Id);
+            if (taskFromDb == null) return;
 
-            // Обновляем статус задачи
+            if (taskFromDb.Status == "Completed") return;
+
             task.Status = "Completed";
             task.Update_at = DateTime.Now;
-            await _dbContext.SaveChangesAsync();
 
-            // Начисляем опыт пользователю
-            var user = await _dbContext.Users.FindAsync(task.User_id);
-            if (user != null)
+            if (!task.Is_rewarded)
             {
-                user.Total_exp += task.Reward_exp;
-                user.Level = user.Total_exp / 100; // 100 опыта = 1 уровень
-                user.Updated_at = DateTime.Now;
+                task.Is_rewarded = true;
+                await _dbContext.SaveChangesAsync();
+
+                var user = await _dbContext.Users.FindAsync(task.User_id);
+                if(user!=null)
+                {
+                    user.Total_exp += task.Reward_exp;
+                    user.Level = user.Total_exp / 100;
+                    user.Updated_at = DateTime.Now;
+                    await _dbContext.SaveChangesAsync();
+                    await CheckAndUnlockAchievements(taskFromDb.User_id);
+                }
+            }
+            else
+            {
                 await _dbContext.SaveChangesAsync();
             }
 
-            // Проверка достижений
-            await CheckAndUnlockAchievements(task.User_id);
-            // Обновляем список задач
             await LoadTasksAsync();
-
             RefreshCompletedTasksInUserPage();
-            await LoadTasksAsync();
+
+            
         }
 
         private void RefreshCompletedTasksInUserPage()
@@ -153,6 +159,20 @@ namespace TaskForge.Views.Pages
             _timerStartTime = DateTime.Now;
             _timer.Start();
 
+        }
+
+        private async void OnDeleteTask(TaskItem task)
+        {
+            if (task == null) return;
+            var result = MessageBox.Show($"Удалить задачу \"{task.Name}\"?",
+                "Подтверждение",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question);
+            if (result != MessageBoxResult.Yes) return;
+
+            _dbContext.Tasks.Remove(task);
+            await _dbContext.SaveChangesAsync();
+            await LoadTasksAsync();
         }
 
         private async Task StopTimerAndSave()
